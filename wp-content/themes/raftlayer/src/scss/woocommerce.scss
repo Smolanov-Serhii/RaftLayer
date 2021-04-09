@@ -1,0 +1,101 @@
+.woocommerce .star-rating,.woocommerce-page .star-rating {
+  float:right;
+  overflow:hidden;
+  position:relative;
+  height:1em;
+  line-height:1em;
+  font-size:1em;
+  width:5.4em;
+  font-family:'star';
+}
+
+.woocommerce .star-rating:before,.woocommerce-page .star-rating:before {
+  content:"\73\73\73\73\73";
+  color:#dfdbdf;
+  float:left;
+  top:0;
+  left:0;
+  position:absolute;
+}
+
+.woocommerce .star-rating span,.woocommerce-page .star-rating span {
+  overflow:hidden;
+  float:left;
+  top:0;
+  left:0;
+  position:absolute;
+  padding-top:1.5em;
+}
+
+.woocommerce .star-rating span:before,.woocommerce-page .star-rating span:before {
+  content:"\53\53\53\53\53";
+  top:0;
+  position:absolute;
+  left:0;
+}
+
+.woocommerce .products .star-rating,.woocommerce-page .products .star-rating {
+  display:block;
+  margin:0 0 .5em;
+  float:none;
+}
+
+.woocommerce .hreview-aggregate .star-rating,.woocommerce-page .hreview-aggregate .star-rating {
+  margin:10px 0 0 0;
+}
+.woocommerce p.stars:after,.woocommerce-page p.stars:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.woocommerce p.stars span,.woocommerce-page p.stars span {
+  width:80px;
+  height:16px;
+  position:relative;
+  float:left;
+  background:url("../../images/star.svg") repeat-x left 0
+}
+
+.woocommerce p.stars span a,.woocommerce-page p.stars span a {
+  float:left;
+  position:absolute;
+  left:0;
+  top:0;
+  width:16px;
+  height:0;
+  padding-top:16px;
+  overflow:hidden
+}
+
+.woocommerce p.stars span a:hover,.woocommerce p.stars span a:focus,.woocommerce-page p.stars span a:hover,.woocommerce-page p.stars span a:focus {
+  background:url("../../images/star.svg") repeat-x left -16px;
+}
+
+.woocommerce p.stars span a.active,.woocommerce-page p.stars span a.active {
+  background:url("../../images/star-clear.svg") repeat-x left -32px;
+}
+
+.woocommerce p.stars span a.star-1,.woocommerce-page p.stars span a.star-1 {
+  width:16px;z-index:10;
+}
+
+.woocommerce p.stars span a.star-2,.woocommerce-page p.stars span a.star-2 {
+  width:32px;
+  z-index:9;
+}
+
+.woocommerce p.stars span a.star-3,.woocommerce-page p.stars span a.star-3 {
+  width:48px;
+  z-index:8;
+}
+
+.woocommerce p.stars span a.star-4,.woocommerce-page p.stars span a.star-4 {
+  width:64px;
+  z-index:7;
+}
+
+.woocommerce p.stars span a.star-5,.woocommerce-page p.stars span a.star-5 {
+  width:80px;
+  z-index:6;
+}

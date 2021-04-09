@@ -1,0 +1,366 @@
+html{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 135%;
+  font-size: 62.5%;
+  color: #403F3E;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a{
+  text-decoration: none;
+  font-weight: 400;
+  color: #403F3E;
+}
+ul, ol{
+
+}
+pre{
+  white-space: break-spaces;
+}
+img{
+  max-width: 100%;
+}
+p, pre{
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 141%;
+  margin-bottom: 0.9em;
+  @media all and (max-width: 1024px) {
+    font-size: 16px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 15px;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 14px;
+  }
+  //@media all and (max-width: 400px) {
+  //  font-size: 12px;
+  //}
+}
+h1{
+  font-weight: 700;
+  font-size: 36px;
+  @media all and (max-width: 1200px) {
+    font-size: 30px;
+  }
+  @media all and (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 14px;
+  }
+}
+ul,ol{
+  list-style: none;
+  margin: 0;
+  li{
+    margin-bottom: 0.6em;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 121%;
+    @media all and (max-width: 1024px) {
+      font-size: 16px;
+    }
+    @media all and (max-width: 768px) {
+      font-size: 15px;
+    }
+    @media all and (max-width: 500px) {
+      font-size: 14px;
+    }
+    //@media all and (max-width: 400px) {
+    //  font-size: 12px;
+    //}
+  }
+}
+strong, b{
+  font-weight: 600;
+}
+em{
+  font-style: italic;
+}
+h2{
+  font-weight: 500;
+  font-size: 42px;
+  @media all and (max-width: 1200px) {
+    font-size: 34px;
+  }
+  @media all and (max-width: 1024px) {
+    font-size: 26px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 10px;
+  }
+}
+h3{
+  font-weight: 700;
+  font-size: 36px;
+}
+h4{
+  font-weight: 700;
+  font-size: 30px;
+}
+h5{
+  font-weight: 700;
+  font-size: 24px;
+}
+h6{
+  font-weight: 700;
+  font-size: 18px;
+}
+a.button{
+  background-color: #112A3D;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: color .3s;
+  padding: 14px 30px;
+  &:hover{
+    background-color: #4BC3E8;
+  }
+}
+.woocommerce table.shop_attributes th{
+  width: 20%;
+}
+.woocommerce-message, .woocommerce-info{
+  border-top-color: #FF3A24;
+  &:before{
+    color: #FF3A24;
+  }
+  a{
+    color: #FF3A24;
+  }
+}
+@mixin customtable{
+  table{
+    border: none;
+    thead{
+      background-color: #F5F5F5;
+    }
+    th{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 122%;
+      color: #B0B0B0!important;
+    }
+    td{
+      font-weight: 400;
+    }
+    th, td{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 155%;
+      color: #000000;
+      padding: 10px;
+      text-align: left;
+      p{
+        padding-left: 20px!important;
+      }
+      @media all and (max-width: 830px) {
+        font-size: 14px;
+      }
+      @media all and (max-width: 600px) {
+        font-size: 12px;
+        padding: 8px;
+      }
+      @media all and (max-width: 400px) {
+        font-size: 10px;
+        padding: 8px;
+      }
+      &.actions{
+        text-align: left;
+        .button{
+          padding: 14px 30px;
+        }
+      }
+    }
+    tr{
+      td, th{
+        padding: 10px;
+      }
+    }
+  }
+}
+.woocommerce {
+  @include customtable;
+}
+.woocommerce table.shop_table{
+  border: none;
+}
+
+.section-title{
+  font-size: 4rem;
+  line-height: 122.5%;
+  color: #000000;
+  font-weight: 500;
+  margin: 60px auto;
+  text-align: center;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+.not-event{
+  & > a{
+    pointer-events: none;
+    font-weight: bolder!important;
+  }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  border: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #112A3D;
+}
+.quantity__row{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 106px;
+  position: relative;
+  strong{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    align-items: center ;
+    left: 0;
+    top: 0;
+  }
+  .quantity{
+    display: flex;
+    border: 1px solid #B0B0B0;
+    .quantity-arrow-plus, .quantity-arrow-minus{
+      display: flex;
+      width: 30px;
+      height: 50px;
+      font-weight: 300;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      font-size: 24px;
+      color: #808384;
+    }
+    span{
+      margin-left: 36px;
+      display: flex;
+      align-items: center;
+      color: #A9C0D0;
+    }
+  }
+}
+.quantity-block {
+  margin: auto;
+  font-size: 20px;
+}
+.quantity-arrow-minus,
+.quantity-arrow-plus {
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+}
+.quantity-num {
+  outline: none;
+}
+
+.section-title{
+  margin: 0 0 17px 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 122%;
+  text-transform: unset;
+  text-align: center;
+  @media all and (max-width: 1000px) {
+    font-size: 36px;
+  }
+  @media all and (max-width: 900px) {
+    font-size: 32px;
+  }
+  @media all and (max-width: 660px) {
+    font-size: 24px;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 30px;
+  }
+}
+
+.block-container{
+  max-width: 1360px;
+  margin: auto;
+  padding: 0 100px;
+  overflow: hidden;
+  @media all and (max-width: 1420px) {
+    padding: 0 50px;
+  }
+  @media all and (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+#page-menu, #category-menu{
+  > li{
+    margin-bottom: 0;
+  }
+  a{
+    color: white;
+    font-weight: 500;
+    line-height: 122%;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+    &:hover{
+      border-bottom: 1px solid white;
+    }
+  }
+}
+.brown-button{
+  background-color: #B87D3B;
+  padding: 6px 18px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 122%;
+  color: #FFFFFF;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover{
+    background-color: #FFFFFF;
+    color: #B87D3B;
+  }
+}
+

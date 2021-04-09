@@ -1,0 +1,253 @@
+@import "normalize";
+@import "vars";
+@import "swiper-bundle";
+@import "default";
+
+.sb-main{
+  display: block!important;
+}
+.header{
+  &__first{
+    background-color: #262625;
+    padding: 14px 0;
+    .block-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__contacts{
+    a{
+      color: white;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 122%;
+      transition: 0.2s;
+      margin: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      svg{
+        path{
+          transition: 0.2s;
+        }
+        margin-right: 10px;
+      }
+      &:hover{
+        text-decoration: underline;
+        svg{
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+  &__second{
+    background-color: #403F3E;
+    .page-menu-item{
+
+    }
+    #page-menu{
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      a{
+        font-size: 1.6rem;
+      }
+    }
+  }
+  &__hird{
+    background-color: #828282;
+    #category-menu{
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      a{
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+.main-slider{
+  position: relative;
+  &__navigate{
+    top: calc(50% - 20px);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    .block-container{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__swicher{
+    cursor: pointer;
+    svg{
+      path{
+        transition: 0.2s;
+      }
+    }
+    &:hover{
+      svg{
+        path{
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+  &__item{
+    position: relative;
+    height: 560px;
+    picture{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__content{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    .block-container{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__title{
+    p{
+      font-size: 5.2rem;
+      line-height: 140%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E5E5E5;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    font-size: 5.2rem;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #E5E5E5;
+    font-weight: 700;
+  }
+  &__desc{
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 122%;
+    color: #FFFFFF;
+    p{
+      font-weight: 300;
+      font-size: 1.8rem;
+      line-height: 122%;
+      color: #FFFFFF;
+    }
+  }
+  &__devider{
+    margin: 30px 0 40px 0;
+    width: 290px;
+    background-color: #B87D3B;
+    height: 4px;
+    display: block;
+  }
+}
+.main-category{
+  padding: 80px 0;
+  background-color: #F2F2F2;
+  > .block-container{
+    position: relative;
+  }
+  &__container{
+    margin: 0 50px;
+    width: calc(100% - 100px);
+  }
+  &__navigate{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__wrapper{
+    z-index: 10;
+  }
+  &__item{
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: 0.2s;
+    }
+    &:hover{
+      .main-category__lnk{
+        padding: 20px 24px;
+        height: auto;
+        max-height: none;
+      }
+      img{
+        //transform: scale(1.1);
+      }
+    }
+  }
+  &__bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+  }
+  &__title{
+    background: rgba(64, 63, 62, 0.4);
+    backdrop-filter: blur(20px);
+    padding: 20px 24px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 122%;
+    color: #B2916B;
+  }
+  &__lnk{
+    background: #B87D3B;
+    padding: 0 24px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 122%;
+    color: #FFFFFF;
+    display: block;
+    width: 100%;
+    transition: 0.2s;
+    height: 0;
+    overflow: hidden;
+    max-height: 0;
+    &:hover{
+      background-color: #FFFFFF;
+      color: #B87D3B;
+      svg{
+        margin-left: 10px;
+        path{
+          fill: #B87D3B;
+        }
+      }
+    }
+    svg{
+      margin-left: 10px;
+      path{
+        transition: 0.2s;
+      }
+    }
+  }
+}
