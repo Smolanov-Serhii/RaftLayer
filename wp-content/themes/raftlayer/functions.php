@@ -273,3 +273,10 @@ function remove_jq_migrate( $scripts ) {
         }
     }
 }
+
+// Add to cart
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
+add_filter( 'woocommerce_product_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
+function tb_woo_custom_cart_button_text() {
+    return __( 'Купить', 'woocommerce' );
+}

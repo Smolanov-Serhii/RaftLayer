@@ -251,3 +251,40 @@
     }
   }
 }
+.technology{
+  padding-bottom: 80px;
+  &__title{
+    margin-bottom: 10px;
+  }
+  &__subtitle{
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 140%;
+    text-align: center;
+    color: #403F3E;
+    margin-bottom: 0;
+  }
+  &__container{
+    margin-top: 84px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text{
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+  &__img{
+    width: calc(50% - 20px);
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__lnk{
+    margin-top: auto;
+    align-self: flex-end;
+  }
+}

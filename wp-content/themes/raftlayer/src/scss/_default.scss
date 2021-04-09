@@ -305,6 +305,9 @@ input[type="number"] {
   line-height: 122%;
   text-transform: unset;
   text-align: center;
+  color: #403F3E;
+  padding-top: 80px;
+
   @media all and (max-width: 1000px) {
     font-size: 36px;
   }
@@ -359,8 +362,7 @@ input[type="number"] {
   transition: 0.2s;
   cursor: pointer;
   &:hover{
-    background-color: #FFFFFF;
-    color: #B87D3B;
+    background-color: #684620;
   }
 }
 
