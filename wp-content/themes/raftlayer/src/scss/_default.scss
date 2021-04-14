@@ -160,7 +160,6 @@ a.button{
       font-weight: 500;
       font-size: 14px;
       line-height: 122%;
-      color: #B0B0B0!important;
     }
     td{
       font-weight: 400;
@@ -252,7 +251,6 @@ input[type="number"] {
 .quantity__row{
   display: flex;
   justify-content: flex-start;
-  padding-left: 106px;
   position: relative;
   strong{
     position: absolute;
@@ -350,7 +348,7 @@ input[type="number"] {
     }
   }
 }
-.brown-button{
+.brown-button, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woof_reset_button_2{
   background-color: #B87D3B;
   padding: 6px 18px;
   display: inline-flex;
@@ -361,8 +359,28 @@ input[type="number"] {
   color: #FFFFFF;
   transition: 0.2s;
   cursor: pointer;
+  border: none;
   &:hover{
     background-color: #684620;
+    color: white;
+  }
+}
+.woocommerce div.product form.cart .button, .woocommerce div.product form.cart .reset_variations{
+  background-color: #B87D3B;
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 122%;
+  color: #FFFFFF;
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  margin-right: 20px;
+  &:hover{
+    background-color: #684620;
+    color: white;
   }
 }
 

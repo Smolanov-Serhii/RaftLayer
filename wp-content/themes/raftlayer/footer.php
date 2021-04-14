@@ -11,18 +11,27 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-
-        <nav id="site-navigation" class="main-navigation">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'footer-menu',
-                    'menu_id'        => 'footer-menu',
-                )
-            );
-            ?>
-        </nav><!-- #site-navigation -->
+	<footer id="footer" class="footer">
+        <div class="footer__container block-container">
+            <div class="footer__logo">
+                <?php
+                the_custom_logo();
+                ?>
+            </div>
+            <nav id="footer-navigation" class="footer__navigation">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'footer-menu',
+                        'menu_id'        => 'footer-menu',
+                    )
+                );
+                ?>
+            </nav>
+            <div class="footer__get-call js-get-call brown-button">
+                <?php the_field('nadpis_zakazat_zvonok', 'options')?>
+            </div>
+        </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <script

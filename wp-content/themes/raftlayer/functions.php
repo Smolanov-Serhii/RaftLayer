@@ -135,6 +135,15 @@ function raftlayer_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Фильтр товаров', 'raftlayer' ),
+            'id'            => 'filter',
+            'description'   => esc_html__( 'добавте фильтр', 'raftlayer' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+        )
+    );
 }
 add_action( 'widgets_init', 'raftlayer_widgets_init' );
 
@@ -184,8 +193,8 @@ function mytheme_add_woocommerce_support(){
 }
 add_action('after_setup_theme','mytheme_add_woocommerce_support');
 add_theme_support( 'wc-product-gallery-zoom' );
-//add_theme_support( 'wc-product-gallery-lightbox' );
-//add_theme_support( 'wc-product-gallery-slider');
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider');
 
 if( function_exists('acf_add_options_page') ) {
 
@@ -279,4 +288,20 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'tb_woo_custom_cart_b
 add_filter( 'woocommerce_product_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
 function tb_woo_custom_cart_button_text() {
     return __( 'Купить', 'woocommerce' );
+}
+
+/* Изменяет символ валюты на буквы */
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+    switch( $currency ) {
+        case 'RUB': $currency_symbol = 'руб.'; break;
+    }
+    return $currency_symbol;
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['additional_information'] );
+    return $tabs;
 }
