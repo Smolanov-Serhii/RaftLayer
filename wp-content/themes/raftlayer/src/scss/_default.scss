@@ -142,12 +142,12 @@ a.button{
   width: 20%;
 }
 .woocommerce-message, .woocommerce-info{
-  border-top-color: #FF3A24;
+  border-top-color: #B87D3B;
   &:before{
-    color: #FF3A24;
+    color: #B87D3B;
   }
   a{
-    color: #FF3A24;
+    color: #B87D3B;
   }
 }
 @mixin customtable{
@@ -354,33 +354,48 @@ input[type="number"] {
   display: inline-flex;
   align-items: center;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.4rem!important;
+  font-family: 'Montserrat', sans-serif;
   line-height: 122%;
   color: #FFFFFF;
   transition: 0.2s;
   cursor: pointer;
   border: none;
+  text-transform: none;
   &:hover{
     background-color: #684620;
     color: white;
   }
 }
-.woocommerce div.product form.cart .button, .woocommerce div.product form.cart .reset_variations{
+.woocommerce div.product form.cart .button, .woocommerce div.product form.cart .reset_variations, .single_add_to_wishlist, .delete_item, .custom-checkout-button, #custom_shop_table td.product-add-to-cart a{
   background-color: #B87D3B;
   padding: 12px 18px;
   display: inline-flex;
   align-items: center;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 1.4rem!important;
+  font-family: 'Montserrat', sans-serif;
   line-height: 122%;
   color: #FFFFFF;
   transition: 0.2s;
   cursor: pointer;
   border: none;
   margin-right: 20px;
+  span{
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
   &:hover{
     background-color: #684620;
     color: white;
   }
 }
-
+.yith-wcwl-add-button{
+  .separator{
+    display: none;
+  }
+  .view-wishlist{
+    display: none;
+  }
+}

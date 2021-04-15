@@ -25,12 +25,12 @@ $hoverbutton: #41B718;
     display: none;
     &:checked + label{
       &:before{
-        background-color: #FF3A24;
+        background-color: #B87D3B;
         background-image: url("../../images/checked.svg");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        border: 1px solid #FF3A24;
+        border: 1px solid #B87D3B;
       }
     }
   }
@@ -74,7 +74,7 @@ $hoverbutton: #41B718;
         left: 6px;
         width: 8px;
         height: 8px;
-        background-color: #FF3A24;
+        background-color: #B87D3B;
         border-radius: 50%;
       }
     }
