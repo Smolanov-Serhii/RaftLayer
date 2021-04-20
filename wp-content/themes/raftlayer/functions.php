@@ -384,3 +384,11 @@ function custom_override_checkout_fields( $fields ) {
     unset($fields['shipping']['shipping_country']);// Отключаем страны доставки
     return $fields;
 }
+
+add_filter('woocommerce_get_image_size_thumbnail', function ($size) {
+    return array(
+        'width'  => 250,
+        'height' => 400,
+        'crop' => 0,
+    );
+});
