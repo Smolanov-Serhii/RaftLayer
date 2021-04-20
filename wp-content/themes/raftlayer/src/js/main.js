@@ -4,6 +4,13 @@ $(document ).ready(function() {
         $('.orderby').selectric();
     }
 
+    if ($('.faq__content').length){
+        $('.faq__content .faq__triger').on('click', function(){
+            $(this).closest('.faq__item').toggleClass('active');
+            $(this).closest('.faq__item').find('.faq__answer').fadeToggle(300);
+        });
+    }
+
     if ($('.woocommerce-checkout').length){
         $('#billing_last_name_field').appendTo('.checkout__person');
         $('#billing_first_name_field').appendTo('.checkout__person');

@@ -32,7 +32,12 @@ get_header();
 		?>
 
 	</main><!-- #main -->
-
+<?php
+if( is_page( 'contacts' ) || is_page( 'gde-kupit' )){
+    get_template_part('inc/consultation');
+    get_template_part('inc/map');
+}
+?>
 <?php
 //get_sidebar();
 get_footer();

@@ -18,7 +18,40 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
+$term = get_queried_object();
+$image = get_field('kartinka_kategorii', $term);
+$title = get_field('zagolovok_dlya_kategorii', $term);
 
+?>
+<header class="entry-header">
+    <div class="post-thumbnail">
+        <?php
+        if( is_shop() ){
+           ?>
+            <img src="<?php echo the_field('kartinka_v_shapku',6)?>" alt="<?php echo the_field('zagolovok_na_straniczu_magazina',6)?>">
+                <?php
+        } else {
+            ?>
+            <img src="<?php echo $image?>" alt="<?php echo $title; ?>">
+            <?php
+        }
+        ?>
+
+    </div>
+    <?php
+    if( is_shop() ){
+        ?>
+        <h1 id="shop-title" class="entry-title block-container"><?php echo the_field('zagolovok_na_straniczu_magazina',6)?></h1>
+        <?php
+    } else {
+        ?>
+        <h1 class="entry-title block-container"><?php the_title(); ?></h1>
+        <?php
+    }
+    ?>
+
+	</header><!-- .entry-header -->
+<?php
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -32,9 +65,9 @@ do_action( 'woocommerce_before_main_content' );
     <div class="products-filter">
         <?php dynamic_sidebar( 'filter' ); ?>
     </div>
-<header class="woocommerce-products-header">
+<section class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+		<h2 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h2>
 	<?php endif; ?>
 
 	<?php
@@ -46,7 +79,7 @@ do_action( 'woocommerce_before_main_content' );
 	 */
 	do_action( 'woocommerce_archive_description' );
 	?>
-</header>
+</section>
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -107,19 +140,7 @@ do_action( 'woocommerce_after_main_content' );
             <?php echo do_shortcode('[featured_products per_page="4" columns="4"]')?>
         </div>
     </section>
-    <section class="consultation" style="background-color: rgba(184,125,59,0.1)">
-        <div class="block-container">
-            <h2 class="consultation__title section-title">
-                <?php the_field('zagolovok_konsultacziya', 12);?>
-            </h2>
-            <div class="consultation__subtitle">
-                <?php the_field('podzagolovok_konsultacziya', 12);?>
-            </div>
-            <div class="consultation__content">
-                <?php echo do_shortcode('[contact-form-7 id="24" title="Консультация"]')?>
-            </div>
-        </div>
-    </section>
+<?php get_template_part('inc/map'); ?>  <!-- Блок отзывы -->
 
 <?php
 /**
