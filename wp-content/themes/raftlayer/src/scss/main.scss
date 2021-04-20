@@ -1,5 +1,6 @@
 @import "normalize";
 @import "vars";
+@import "fresco";
 @import "swiper-bundle";
 @import "default";
 @import "woo";
@@ -848,7 +849,7 @@ main{
     padding-top: 40px;
   }
 }
-.default-page, .archive, .poleznoe, .status-publish, .faq-page{
+.default-page, .archive, .poleznoe, .status-publish, .faq-page, .page-template-about{
   h2,h3,h4,h5,h6{
     margin-bottom: 1em;
   }
@@ -908,6 +909,13 @@ main{
         }
       }
     }
+  }
+}
+.razmery-wrapper{
+  a{
+    text-decoration: underline;
+    color: red;
+    margin: 10px 0;
   }
 }
 .single-product{

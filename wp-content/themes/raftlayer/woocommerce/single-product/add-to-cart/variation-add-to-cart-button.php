@@ -27,10 +27,15 @@ global $product;
 
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
+    <div class="razmery-wrapper">
+        <a href="<?php echo the_field('kartinka_razmerov', 'options')?>" class="razmety-lnk fresco" id="razmery-lnk">
+            <?php the_field('nadpis_tablicza_razmerov', 'options')?>
+        </a>
+    </div>
 
-	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
     <div class="cart-button-wrapper">
+        <button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
         <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
         <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
     </div>

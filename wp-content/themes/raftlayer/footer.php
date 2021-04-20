@@ -40,6 +40,7 @@
         crossorigin="anonymous" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d325ee9d-883e-46b0-a064-7900b7b320c5&lang=ru_RU" type="text/javascript" defer></script>
+<script src="<?php echo get_template_directory_uri() ?>/src/js/fresco.js" defer></script>
 <script src="<?php echo get_template_directory_uri() ?>/dist/js/common.js" defer></script>
 <?php wp_footer(); ?>
 
