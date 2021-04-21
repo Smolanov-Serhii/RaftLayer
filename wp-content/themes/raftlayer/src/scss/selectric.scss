@@ -1,6 +1,6 @@
-$selectric-main-color:      #BFBFBF !default;                                              // Color used in border
+$selectric-main-color:      #684620 !default;                                              // Color used in border
 $selectric-secondary-color: #BBB !default;                                              // Color used in button
-$selectric-text-color:      #808384 !default;                                              // Color used in label
+$selectric-text-color:      #684620 !default;                                              // Color used in label
 $selectric-bg-color:        #FFFFFF !default;                                           // Background color
 $selectric-btn-bg-color:    transparent !default;                                           // Button background color
 $selectric-height:          31px !default;                                              // Outer height
@@ -61,8 +61,8 @@ $selectric-font-size:       14px !default;                                      
       bottom: 0;
       left: 0;
       margin: auto;
-      border-right: 1px solid #bbb;
-      border-bottom: 1px solid #bbb;
+      border-right: 1px solid #684620;
+      border-bottom: 1px solid #684620;
       width: 6px;
       height: 6px;
       transform: rotate(45deg);
