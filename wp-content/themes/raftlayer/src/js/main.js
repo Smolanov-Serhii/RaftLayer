@@ -4,6 +4,32 @@ $(document ).ready(function() {
         $('.orderby').selectric();
     }
 
+    if ($('.video-block__container').length){
+        var VideoSlider = new Swiper('.video-block__container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            lazy: true,
+            navigation: {
+                nextEl: '.about__video-block .next',
+                prevEl: '.about__video-block .prev',
+            }
+        });
+    }
+
+    if ($('.sertificate-block__container').length){
+        var SertSlider = new Swiper('.sertificate-block__container', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            lazy: true,
+            navigation: {
+                nextEl: '.about__sertificate-block .next',
+                prevEl: '.about__sertificate-block .prev',
+            }
+        });
+    }
+
     if ($('.faq__content').length){
         $('.faq__content .faq__triger').on('click', function(){
             $(this).closest('.faq__item').toggleClass('active');

@@ -30,6 +30,14 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+        <?php
+        if( is_page( 'otzyvy' )){
+            echo '<div class="reviewe-form">';
+            echo '<h2 class="reviewe-form__title">Оставьте свой отзыв!</h2>';
+            echo do_shortcode('[testimonial_view id="2"]');
+            echo '</div>';
+        }
+        ?>
 
 	</main><!-- #main -->
 <?php
