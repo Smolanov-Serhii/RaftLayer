@@ -2876,3 +2876,20 @@ body{
     }
   }
 }
+.cp-affilate-link.cp-responsive{
+  display: none!important;
+}
+.cp-modal-content {
+  .cp_responsive{
+    margin-bottom: 20px!important;
+    display: block!important;
+  }
+  .wpcf7-submit{
+    background-color: #b87d3b;
+    color: white;
+    transition: 0.2s;
+    &:hover{
+      background-color: #684620;
+    }
+  }
+}
