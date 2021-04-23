@@ -19,4 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<ul id="custom-products" class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<div class="custom-slider-loop swiper-container">
+    <ul id="custom-products" class="products swiper-wrapper columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+
+

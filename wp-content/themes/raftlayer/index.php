@@ -58,6 +58,7 @@ get_header();
                 </div>
             </section>
             <section class="main-category">
+                <h2 class="main-category__block-title section-title">Категории товаров</h2>
                 <div class="block-container">
                     <div class="main-category__container swiper-container">
                         <div class="main-category__wrapper swiper-wrapper">
@@ -150,10 +151,13 @@ get_header();
                 </div>
             </div>
             <section class="reviewes block-container">
-                <h2 class="new-product__title section-title">
+                <h2 class="reviewes__title section-title">
                     <?php the_field('zagolovok_bloka_otzyvy', 12);?>
                 </h2>
                 <?php echo do_shortcode('[testimonial_view id="1"]')?>
+                <div class="reviewes__lnk">
+                    <a class="brown-button" href="<?php echo get_home_url(); ?>/otzyvy/" target="_blank">ещё отзывы</a>
+                </div>
             </section>
             <section class="news">
                 <div class="news__left">
@@ -191,12 +195,12 @@ get_header();
                                         <?php the_post_thumbnail();?>
                                     </div>
                                     <div class="news__content">
-                                        <h2 class="news__title">
-                                            <?php the_title();?>
-                                        </h2>
                                         <div class="news__date">
                                             <?php echo $date;?>
                                         </div>
+                                        <h2 class="news__title">
+                                            <?php the_title();?>
+                                        </h2>
                                         <div class="news__desc">
                                             <?php the_excerpt();?>
                                             <span class="news__detail">

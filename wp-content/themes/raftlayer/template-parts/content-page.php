@@ -55,6 +55,27 @@
 				'after'  => '</div>',
 			)
 		);
+        if( is_page( 'contacts' )){
+            ?>
+            <div class="socials-contacts">
+                <h3 class="socials-contacts__title">
+                    Мы в социальных сетях
+                </h3>
+                <div class="socials-contacts__list">
+                    <div class="socials-contacts__item">
+                        <a href="<?php echo the_field('ssylka_na_vkontakte', 22)?>">
+                            <img src="<?php echo the_field('ikonka_dlya_vkontakte', 22)?>" alt="Мы вконтакте"
+                        </a>
+                    </div>
+                    <div class="socials-contacts__item">
+                        <a href="<?php echo the_field('ssilka_na_instagram', 22)?>">
+                            <img src="<?php echo the_field('ikonka_instagram', 22)?>" alt="Мы в instagram"
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
 		?>
 	</div><!-- .entry-content -->
 

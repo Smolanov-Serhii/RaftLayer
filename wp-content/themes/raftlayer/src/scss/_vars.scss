@@ -70,7 +70,7 @@ $hoverbutton: #41B718;
         content: "";
         position: absolute;
         display: none;
-        top: 7px;
+        top: 6px;
         left: 6px;
         width: 8px;
         height: 8px;
@@ -94,25 +94,27 @@ $hoverbutton: #41B718;
 @mixin elselist {
   ul, ol{
     line-height: 121%;
+    list-style: disc;
     color: #000000;
     font-weight: 300;
     margin-bottom: 24px;
+    padding-left: 20px;
     li{
-      position: relative;
-      padding-left: 20px;
-      &:before{
-        position: absolute;
-        top: 6px;
-        left: 0;
-        content: "";
-        display: block;
-        width: 7px;
-        height: 8px;
-        background-image: url("../../images/list-marker.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+      //position: relative;
+      //padding-left: 20px;
+      //&:before{
+      //  position: absolute;
+      //  top: 6px;
+      //  left: 0;
+      //  content: "";
+      //  display: block;
+      //  width: 7px;
+      //  height: 8px;
+      //  background-image: url("../../images/list-marker.svg");
+      //  background-size: contain;
+      //  background-repeat: no-repeat;
+      //  background-position: center;
+      //}
     }
   }
 }

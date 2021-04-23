@@ -45,7 +45,7 @@ $title = get_field('zagolovok_dlya_kategorii', $term);
         <?php
     } else {
         ?>
-        <h1 class="entry-title block-container"><?php the_title(); ?></h1>
+        <h1 class="entry-title block-container"><?php echo $title ?></h1>
         <?php
     }
     ?>
@@ -137,7 +137,7 @@ do_action( 'woocommerce_after_main_content' );
             <?php the_field('zagolovok_bloka_hity_prodazh', 12);?>
         </h2>
         <div class="block-container">
-            <?php echo do_shortcode('[featured_products per_page="4" columns="4"]')?>
+            <?php echo do_shortcode('[featured_products per_page="10" columns="4"]')?>
         </div>
     </section>
 <?php get_template_part('inc/map'); ?>  <!-- Блок отзывы -->

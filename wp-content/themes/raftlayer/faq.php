@@ -39,7 +39,7 @@ get_header();
                         ?>
                         <div class="faq__item">
                             <div class="faq__triger">
-                                <h5><?php the_title();?></h5>
+                                <div class="faq__triger-title"><?php the_title();?></div>
                                 <div class="close-item">
                                     <span class="vert"></span>
                                     <span class="hor"></span>

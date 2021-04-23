@@ -15,6 +15,17 @@ get_header();
             <h1 class="entry-title block-container"><?php the_title(); ?></h1>
         </header><!-- .entry-header -->
         <article class="about__article">
+            <section class="about__history-block history-block ">
+                <div class="video-block__header block-container">
+                    <h2>
+                        <?php the_field('zagolovok_bloka_istoriya', 16);?>
+                    </h2>
+                    <p><?php the_field('podzagolovok_bloka_istoriya', 16);?></p>
+                </div>
+                <div class="history-block__content block-container">
+                    <?php the_field('opisanie_blloka_istoriya', 16);?>
+                </div>
+            </section>
             <section class="about__video-block video-block block-container">
                 <div class="video-block__header">
                     <div class="video-navigate">
@@ -54,21 +65,10 @@ get_header();
                                         <p><?php echo $sub_subtitle;?></p>
                                     </div>
                                 </a>
-                               <?php
+                            <?php
                             endwhile;
                         endif;?>
                     </div>
-                </div>
-            </section>
-            <section class="about__history-block history-block">
-                <div class="video-block__header block-container">
-                    <h2>
-                        <?php the_field('zagolovok_bloka_istoriya', 16);?>
-                    </h2>
-                    <p><?php the_field('podzagolovok_bloka_istoriya', 16);?></p>
-                </div>
-                <div class="history-block__content block-container">
-                    <?php the_field('opisanie_blloka_istoriya', 16);?>
                 </div>
             </section>
             <section class="about__technology-block technology-block block-container">

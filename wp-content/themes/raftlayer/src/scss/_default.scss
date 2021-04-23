@@ -4,6 +4,9 @@ html{
   line-height: 135%;
   font-size: 62.5%;
   color: #403F3E;
+  @media all and (max-width: 1100px) {
+    font-size: 58%;
+  }
 }
 
 * {
@@ -40,9 +43,9 @@ p, pre{
   @media all and (max-width: 500px) {
     font-size: 14px;
   }
-  //@media all and (max-width: 400px) {
-  //  font-size: 12px;
-  //}
+  @media all and (max-width: 400px) {
+    font-size: 12px;
+  }
 }
 h1{
   font-weight: 700;
@@ -89,28 +92,52 @@ em{
   font-style: italic;
 }
 h2{
-  font-weight: 500;
-  font-size: 42px;
+  font-weight: 700;
+  font-size: 4.2rem;
   @media all and (max-width: 1200px) {
-    font-size: 34px;
+    font-size: 3.4rem;
   }
   @media all and (max-width: 1024px) {
-    font-size: 26px;
+    font-size: 2.6rem;
   }
   @media all and (max-width: 768px) {
-    font-size: 18px;
+    font-size: 2.2rem;
   }
   @media all and (max-width: 500px) {
-    font-size: 10px;
+    font-size: 1.6rem;
   }
 }
 h3{
   font-weight: 700;
-  font-size: 36px;
+  font-size: 3.6rem;
+  @media all and (max-width: 1200px) {
+    font-size: 2.8rem;
+  }
+  @media all and (max-width: 1024px) {
+    font-size: 2.2rem;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 1.4rem;
+  }
 }
 h4{
   font-weight: 700;
-  font-size: 30px;
+  font-size: 3rem;
+  @media all and (max-width: 1200px) {
+    font-size: 2.4rem;
+  }
+  @media all and (max-width: 1024px) {
+    font-size: 1.8rem;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 1.0rem;
+  }
 }
 h5{
   font-weight: 700;
@@ -207,14 +234,6 @@ a.button{
   border: none;
 }
 
-.section-title{
-  font-size: 4rem;
-  line-height: 122.5%;
-  color: #000000;
-  font-weight: 500;
-  margin: 60px auto;
-  text-align: center;
-}
 
 *{
   box-sizing: border-box;
@@ -306,17 +325,18 @@ input[type="number"] {
   color: #403F3E;
   padding-top: 80px;
 
-  @media all and (max-width: 1000px) {
-    font-size: 36px;
+  @media all and (max-width: 1024px) {
+    font-size: 3.2rem;
+    padding-top: 60px;
   }
-  @media all and (max-width: 900px) {
-    font-size: 32px;
-  }
-  @media all and (max-width: 660px) {
-    font-size: 24px;
+  @media all and (max-width: 768px) {
+    font-size: 2.8rem;
+    padding-top: 40px;
   }
   @media all and (max-width: 500px) {
-    font-size: 30px;
+    font-size: 2.4rem;
+    padding: 30px 20px 0 20px;
+    text-align: left;
   }
 }
 
@@ -348,7 +368,7 @@ input[type="number"] {
     }
   }
 }
-.brown-button, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woof_reset_button_2{
+.brown-button, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woof_reset_button_2, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   background-color: #B87D3B;
   padding: 6px 18px;
   display: inline-flex;
@@ -362,6 +382,11 @@ input[type="number"] {
   cursor: pointer;
   border: none;
   text-transform: none;
+  @media all and (max-width: 440px) {
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+  }
   &:hover{
     background-color: #684620;
     color: white;
@@ -397,5 +422,189 @@ input[type="number"] {
   }
   .view-wishlist{
     display: none;
+  }
+}
+.woocommerce-wishlist{
+  #yith-wcwl-form{
+    .wishlist_table{
+      li{
+        @media all and (max-width: 768px) {
+          border: 1px solid #F5F5F5;
+          position: relative;
+          .item-details-table, .additional-info{
+            .label{
+              font-size: 18px;
+              line-height: 120%;
+            }
+            .value{
+              font-size: 18px;
+              line-height: 120%;
+            }
+          }
+          .product-remove{
+            position: absolute;
+            right: 0;
+            top: 0;
+            svg{
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+        @media all and (max-width: 500px) {
+          .item-details-table, .additional-info{
+            .label{
+              font-size: 14px;
+              vertical-align: middle;
+            }
+            .value{
+              font-size: 14px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+    .item-wrapper{
+      @media all and (max-width: 768px) {
+        .product-name{
+          h3{
+            font-size: 24px;
+            line-height: 120%;
+          }
+        }
+        .item-details-table, .additional-info{
+          .label{
+            font-size: 18px;
+            line-height: 120%;
+          }
+          .value{
+            font-size: 18px;
+            line-height: 120%;
+          }
+        }
+      }
+      @media all and (max-width: 500px) {
+        .product-name{
+          h3{
+            font-size: 16px;
+            line-height: 120%;
+          }
+        }
+        .item-details-table, .additional-info{
+          .label{
+            font-size: 14px;
+            line-height: 120%;
+            vertical-align: middle;
+          }
+          .value{
+            font-size: 14px;
+            line-height: 120%;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+.strong-view{
+  .strong-content{
+    .wpmtst-testimonial{
+      margin-bottom: 40px!important;
+      border: none!important;
+      &:nth-child(even){
+        .wpmtst-testimonial-content{
+          flex-direction: row-reverse;
+          .wpmtst-testimonial__wrapper {
+            &:before {
+              right: -30px;
+              left: auto!important;
+              top: 40px;
+              border-top: 30px solid #F2F2F2;
+              border-right: 30px solid transparent;
+              border-left: none!important;
+            }
+          }
+        }
+      }
+      .wpmtst-testimonial-inner{
+        border: none!important;
+        padding: 0;
+        .wpmtst-testimonial-content{
+          display: flex;
+          justify-content: space-between;
+          @media all and (max-width: 600px) {
+            flex-direction: column;
+          }
+          .wpmtst-testimonial-image{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0;
+            @media all and (max-width: 600px) {
+              margin-bottom: 20px;
+              margin-right: auto;
+              margin-left: auto;
+            }
+            img{
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+              padding: 0;
+            }
+          }
+          .wpmtst-testimonial__wrapper{
+            width: calc(100% - 131px);
+            background-color: #F2F2F2;
+            border-radius: 8px;
+            padding: 20px 60px 33px 60px;
+            position: relative;
+            @media all and (max-width: 600px) {
+              width: 100%;
+            }
+            @media all and (max-width: 500px) {
+              padding: 20px;
+            }
+            &:before{
+              content: "";
+              display: block;
+              position: absolute;
+              left: -30px;
+              top: 40px;
+              width: 0;
+              height: 0;
+              border-top: 30px solid #F2F2F2;
+              border-left: 30px solid transparent;
+              @media all and (max-width: 600px) {
+                display: none;
+              }
+            }
+            p{
+              font-size: 1.2rem;
+              line-height: 155%;
+              font-weight: 400;
+              color: #403F3E;
+            }
+            .testimonial-field{
+              font-weight: 600;
+              font-size: 1.4rem;
+              line-height: 140%;
+              color: #403F3E;
+              margin-bottom: 7px;
+              text-align: left;
+              &.testimonial-name{
+                text-align: left;
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: #403F3E;
+                font-weight: 700;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

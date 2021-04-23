@@ -11,15 +11,141 @@
 #shop-title{
   margin-bottom: auto;
 }
+.body-lock{
+  overflow: hidden;
+}
 main{
   margin-bottom: 40px;
 }
+body{
+  @media all and (max-width: 980px) {
+    padding-top: 50px;
+  }
+}
 .header{
+  @media all and (max-width: 980px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
+  &__mobile-fade{
+    width: 100%;
+    height: calc(100vh - 12px);
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+    top: 52px;
+    left: 0;
+    position: fixed;
+    display: none;
+  }
+  &__mobile-menu{
+    display: none;
+    position: fixed;
+    top: 52px;
+    left: 0;
+    width: 80%;
+    max-width: 280px;
+    background-color: #262625;
+    height: calc(100vh - 12px);
+    z-index: 101;
+    overflow-y: scroll;
+    .header__contacts{
+      padding: 20px;
+      a{
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .header__get-call{
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      justify-content: center;
+    }
+    nav{
+      padding: 20px;
+      li{
+        margin-bottom: .6em!important;
+      }
+      a{
+        color: white;
+        font-size: 1.6rem;
+        margin-bottom: .6em;
+        line-height: 121%;
+      }
+    }
+    .top-menu-item{
+      background-color: #262625;
+    }
+    .page-menu-item{
+      background-color: #403F3E;
+    }
+    .category-menu-item{
+      background-color: #828282;
+    }
+  }
+  .icons-wrapper{
+    display: flex;
+  }
+  &__logo{
+    @media all and (max-width: 980px) {
+      flex: 1;
+    }
+    @media all and (max-width: 500px) {
+      margin-right: 30px;
+    }
+  }
+  &__burger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 23px;
+    width: 24px;
+    margin-right: 25px;
+    cursor: pointer;
+    @media all and (max-width: 980px) {
+      display: flex;
+      align-items: flex-start;
+    }
+    &:hover{
+      span{
+        width: 100%!important;
+      }
+    }
+    span{
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      transition: 0.2s;
+      &:nth-child(2){
+        width: calc(100% - 7px);
+        transition-delay: 0.2s;
+      }
+      &:nth-child(3){
+        width: calc(100% - 14px);
+        transition-delay: 0.4s;
+      }
+    }
+  }
+  &__mobile{
+    display: none;
+    background-color: #828282;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @media all and (max-width: 980px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
   .to-wishlist{
     z-index: 2;
-    @media all and (max-width: 938px) {
-      display: none;
-    }
+    //@media all and (max-width: 980px) {
+    //  display: none;
+    //}
     a{
       margin: 0 21px;
       display: flex;
@@ -27,6 +153,9 @@ main{
       color: white;
       position: relative;
       padding-bottom: 4px;
+      @media all and (max-width: 980px) {
+        margin: 0 15px 0 0;
+      }
       .yith-wcwl-items-count{
         position: absolute;
         top: -2px;
@@ -102,6 +231,9 @@ main{
   }
   &__undermenu{
     background-color: #000000;
+    @media all and (max-width: 980px) {
+      display: none;
+    }
     .block-container{
       #top-menu{
         display: flex;
@@ -122,6 +254,9 @@ main{
   &__first{
     background-color: #262625;
     padding: 14px 0;
+    @media all and (max-width: 980px) {
+      display: none;
+    }
     .block-container{
       display: flex;
       justify-content: space-between;
@@ -138,6 +273,9 @@ main{
       margin: 0 20px;
       display: inline-flex;
       align-items: center;
+      @media all and (max-width: 1024px) {
+        margin: 0 10px;
+      }
       svg{
         path{
           transition: 0.2s;
@@ -156,6 +294,9 @@ main{
   }
   &__second{
     background-color: #403F3E;
+    @media all and (max-width: 980px) {
+      display: none;
+    }
     .page-menu-item{
 
     }
@@ -179,6 +320,9 @@ main{
   }
   &__hird{
     background-color: #828282;
+    @media all and (max-width: 980px) {
+      display: none;
+    }
     #category-menu{
       display: flex;
       justify-content: space-between;
@@ -197,6 +341,11 @@ main{
     left: 0;
     width: 100%;
     z-index: 10;
+    @media all and (max-width: 768px) {
+      top: auto;
+      bottom: 20px;
+      width: 120px;
+    }
     .block-container{
       display: flex;
       justify-content: space-between;
@@ -220,6 +369,12 @@ main{
   &__item{
     position: relative;
     height: 560px;
+    @media all and (max-width: 1300px) {
+      height: 450px;
+    }
+    @media all and (max-width: 1100px) {
+      height: 400px;
+    }
     picture{
       position: absolute;
       top: 0;
@@ -247,6 +402,10 @@ main{
     }
   }
   &__title{
+    @media all and (max-width: 500px) {
+      width: 100%;
+      text-align: left;
+    }
     p{
       font-size: 5.2rem;
       line-height: 140%;
@@ -255,6 +414,16 @@ main{
       color: #E5E5E5;
       font-weight: 700;
       margin-bottom: 0;
+      @media all and (max-width: 980px) {
+        font-size: 4rem;
+      }
+      @media all and (max-width: 768px) {
+        font-size: 3.6rem;
+      }
+      @media all and (max-width: 500px) {
+        font-size: 3rem;
+        text-align: left!important;
+      }
     }
     font-size: 5.2rem;
     line-height: 140%;
@@ -262,17 +431,32 @@ main{
     text-transform: uppercase;
     color: #E5E5E5;
     font-weight: 700;
+    @media all and (max-width: 980px) {
+      font-size: 4rem;
+    }
   }
   &__desc{
     font-weight: 300;
     font-size: 1.8rem;
     line-height: 122%;
     color: #FFFFFF;
+    @media all and (max-width: 980px) {
+      font-size: 1.6rem;
+    }
+    @media all and (max-width: 500px) {
+      text-align: left;
+    }
     p{
       font-weight: 300;
       font-size: 1.8rem;
       line-height: 122%;
       color: #FFFFFF;
+      @media all and (max-width: 980px) {
+        font-size: 1.6rem;
+      }
+      @media all and (max-width: 768px) {
+        margin-top: 40px;
+      }
     }
   }
   &__devider{
@@ -281,17 +465,47 @@ main{
     background-color: #B87D3B;
     height: 4px;
     display: block;
+    @media all and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 .main-category{
   padding: 80px 0;
   background-color: #F2F2F2;
+  @media all and (max-width: 1024px) {
+    padding-top: 40px;
+    .block-container{
+      padding: 0;
+    }
+  }
+  @media all and (max-width: 768px) {
+    padding-bottom: 20px;
+  }
+  @media all and (max-width: 500px) {
+    padding-top: 30px;
+  }
+  &__block-title{
+    display: none;
+    @media all and (max-width: 1024px) {
+      display: block;
+      padding-top: 0;
+    }
+  }
   > .block-container{
     position: relative;
   }
   &__container{
     margin: 0 50px;
     width: calc(100% - 100px);
+    @media all and (max-width: 1024px) {
+      width: 100%;
+      padding: 0 50px;
+      margin: 0;
+    }
+    @media all and (max-width: 768px) {
+      padding: 0 20px;
+    }
   }
   &__navigate{
     top: 0;
@@ -302,6 +516,9 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media all and (max-width: 1024px) {
+      display: none;
+    }
   }
   &__wrapper{
     z-index: 10;
@@ -340,6 +557,12 @@ main{
     font-size: 1.6rem;
     line-height: 122%;
     color: #B2916B;
+    @media all and (max-width: 500px) {
+      padding: 10px;
+    }
+    @media all and (max-width: 440px) {
+      font-size: 1.4rem;
+    }
   }
   &__lnk{
     background: #B87D3B;
@@ -354,6 +577,14 @@ main{
     height: 0;
     overflow: hidden;
     max-height: 0;
+    @media all and (max-width: 500px) {
+      padding: 10px!important;
+      height: auto;
+      max-height: none;
+    }
+    @media all and (max-width: 440px) {
+      font-size: 1.4rem;
+    }
     &:hover{
       background-color: #FFFFFF;
       color: #B87D3B;
@@ -374,30 +605,55 @@ main{
 }
 .technology{
   padding-bottom: 80px;
+  @media all and (max-width: 768px) {
+    padding-bottom: 20px;
+  }
   &__title{
     margin-bottom: 10px;
+    @media all and (max-width: 500px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   &__subtitle{
-    font-weight: 500;
-    font-size: 1.8rem;
     line-height: 140%;
     text-align: center;
     color: #403F3E;
     margin-bottom: 0;
+    @media all and (max-width: 500px) {
+      text-align: left;
+    }
   }
   &__container{
     margin-top: 84px;
     display: flex;
     justify-content: space-between;
+    @media all and (max-width: 1024px) {
+      margin-top: 40px;
+    }
+    @media all and (max-width: 920px) {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    @media all and (max-width: 768px) {
+      margin-top: 20px;
+    }
   }
   &__text{
     width: calc(50% - 20px);
     display: flex;
     flex-direction: column;
+    @media all and (max-width: 920px) {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
   &__img{
     width: calc(50% - 20px);
     overflow: hidden;
+    @media all and (max-width: 920px) {
+      width: 100%;
+    }
     img{
       object-fit: cover;
       width: 100%;
@@ -414,6 +670,9 @@ main{
   background-color: #F2F2F2;
   position: relative;
   padding-bottom: 80px;
+  @media all and (max-width: 768px) {
+    padding-bottom: 20px;
+  }
   .section-title{
     margin-bottom: 60px;
   }
@@ -440,7 +699,13 @@ main{
   margin-right: -40px;
   position: relative;
   z-index: 3;
-  flex-wrap: wrap;
+  align-items: stretch;
+  @media all and (max-width: 1024px) {
+    margin-right: -20px;
+  }
+  @media all and (max-width: 768px) {
+    margin-bottom: 0;
+  }
   .onsale{
     display: none;
   }
@@ -450,16 +715,29 @@ main{
     width: calc(25% - 40px);
     margin-right: 40px;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    @media all and (max-width: 1024px) {
+      width: calc(25% - 20px);
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+     > .woocommerce-LoopProduct-link{
+       flex: 1;
+       display: flex;
+       flex-direction: column;
+     }
   }
   h2{
-    padding-top: 14px;
+    padding: 14px 20px 14px 20px;
     border-top: 1px solid #B2916B;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 140%;
     text-align: center;
     color: #403F3E;
-    padding-bottom: 14px;
+    flex: 1;
   }
   .price{
     text-align: center;
@@ -485,15 +763,43 @@ main{
     color: #FFFFFF;
     padding: 9px;
     margin-top: 0;
+    @media all and (max-width: 1080px) {
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      font-size: 1.8rem;
+    }
+    @media all and (max-width: 1024px) {
+      width: calc(100% - 20px);
+      margin-left: 10px;
+      font-size: 1.2rem;
+
+    }
   }
 }
 .reviewes{
   padding-bottom: 80px;
+  @media all and (max-width: 500px) {
+    padding-bottom: 20px;
+  }
+  &__title{
+    margin-bottom: 73px;
+    @media all and (max-width: 500px) {
+      margin-bottom: 20px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__lnk{
+    text-align: center;
+  }
 }
 .news{
   background-color: #F2F2F2;
   padding-bottom: 80px;
   position: relative;
+  @media all and (max-width: 500px) {
+    padding-bottom: 20px;
+  }
   &__left{
     position: absolute;
     left: 0;
@@ -506,11 +812,19 @@ main{
   }
   &__title{
     margin-bottom: 74px;
+    @media all and (max-width: 500px) {
+      margin-bottom: 20px;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   &__content{
     padding: 12px 20px 20px 20px;
     position: relative;
     background-color: #FFFFFF;
+    @media all and (max-width: 500px) {
+      padding: 10px;
+    }
     .news__title{
       margin-bottom: 18px;
       font-size: 1.8rem;
@@ -541,17 +855,42 @@ main{
     font-size: 1.4rem;
     line-height: 140%;
     color: #FFFFFF;
+    @media all and (max-width: 1240px) {
+      position: static;
+      background-color: transparent;
+      padding: 0;
+      color: #403F3E;
+    }
   }
   &__list{
     display: flex;
     margin-right: -9px;
-    display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media all and (max-width: 1024px) {
+      margin-right: -20px;
+    }
+    @media all and (max-width: 768px) {
+      margin-right: 0;
+    }
   }
   &__item{
     width: calc(25% - 9px);
     margin-right: 9px;
     border: 1px solid #B2916B;
+    @media all and (max-width: 1024px) {
+      width: calc(50% - 20px);
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+    @media all and (max-width: 768px) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
     &:hover{
       .news__image{
         img{
@@ -564,6 +903,9 @@ main{
     width: 100%;
     height: 280px;
     overflow: hidden;
+    @media all and (max-width: 500px) {
+      height: 200px;
+    }
     img{
       object-fit: cover;
       width: 100%;
@@ -581,16 +923,34 @@ main{
   &__all{
     margin-top: 60px;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    @media all and (max-width: 500px) {
+      margin-top: 20px;
+    }
   }
 }
 .consultation{
   padding-bottom: 80px;
+  @media all and (max-width: 768px) {
+    padding-bottom: 20px;
+  }
+  &__title{
+    @media all and (max-width: 500px) {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: left;
+    }
+  }
   &__subtitle{
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
     text-align: center;
     color: #403F3E;
+    @media all and (max-width: 500px) {
+      text-align: left;
+    }
   }
   &__content{
     margin-top: 40px;
@@ -601,6 +961,18 @@ main{
         flex-wrap: wrap;
         margin-right: -20px;
         padding: 0 200px;
+        @media all and (max-width: 1240px) {
+          padding: 0 50px;
+        }
+        @media all and (max-width: 768px) {
+          padding: 0;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          br{
+            display: none;
+          }
+        }
         margin-bottom: 0;
       }
       input.wpcf7-submit{
@@ -625,6 +997,12 @@ main{
     .wpcf7-form-control-wrap, .wpcf7-submit{
       width: calc(33.333% - 20px);
       margin-right: 20px;
+      @media all and (max-width: 768px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        display: block;
+      }
       input{
         width: 100%;
         border: 1px solid #B2916B;
@@ -640,11 +1018,32 @@ main{
         }
       }
     }
+    .wpcf7-submit{
+      @media all and (max-width: 768px) {
+        padding: 6px 18px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media all and (max-width: 440px) {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+    .ajax-loader{
+      @media all and (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
     .acceptance-326{
       width: 100%;
       .wpcf7-list-item{
         margin-left: 80px;
         margin-right: 80px;
+        @media all and (max-width: 768px) {
+          margin: 0;
+        }
         label{
           input{
             display: none;
@@ -695,6 +1094,9 @@ main{
 .map{
   height: 410px;
   position: relative;
+  @media all and (max-width: 1024px) {
+    height: auto;
+  }
   &__container{
     position: absolute;
     left: 0;
@@ -711,38 +1113,113 @@ main{
     @media all and (max-width: 1420px) {
       padding-left: 50px;
     }
+    @media all and (max-width: 1024px) {
+      position: static;
+      width: 100%;
+      padding: 50px;
+      text-align: center;
+    }
     @media all and (max-width: 768px) {
-      padding-left: 20px;
+      padding: 20px;
     }
 
   }
   &__map{
     height: 100%;
+    @media all and (max-width: 1024px) {
+     height: 300px;
+    }
   }
   &__adress{
     margin-bottom: 26px;
+    @media all and (max-width: 1024px) {
+      margin-bottom: 0;
+    }
     p{
       margin-bottom: 0;
       font-weight: 500;
       font-size: 2.4rem;
       line-height: 150%;
       color: #1F1F1F;
+      @media all and (max-width: 1024px) {
+        font-size: 2rem;
+      }
+      @media all and (max-width: 500px) {
+        font-size: 1.6em;
+        text-align: left;
+      }
+    }
+  }
+  &__phones{
+    .mobile-phone{
+      display: none;
+      @media all and (max-width: 500px) {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+    @media all and (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
   &__phones, &__email{
     display: flex;
     align-items: center;
     margin-bottom: 14px;
+    @media all and (max-width: 1024px) {
+      margin: auto auto 0 auto;
+    }
+    @media all and (max-width: 500px) {
+      align-items: flex-start;
+      margin-top: 10px;
+      margin-left: 0;
+      margin-right: 0;
+    }
     svg{
       margin-right: 22px;
+      @media all and (max-width: 500px) {
+        display: none;
+        justify-content: flex-start;
+      }
     }
     a{
       font-weight: 500;
       font-size: 2.4rem;
       line-height: 150%;
       color: #1F1F1F;
+      margin-right: 20px;
+      @media all and (max-width: 1024px) {
+        font-size: 2rem;
+      }
+      @media all and (max-width: 500px) {
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+      @media all and (max-width: 400px) {
+        font-size: 1.4rem;
+      }
       &:first-child{
         margin-right: 32px;
+      }
+    }
+  }
+  &__email{
+    @media all and (max-width: 500px) {
+      margin-top: 0;
+    }
+    .mobile-email{
+      display: none;
+      @media all and (max-width: 500px) {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
       }
     }
   }
@@ -757,21 +1234,46 @@ main{
   background-color: #262625;
   padding-top: 60px;
   padding-bottom: 80px;
+  @media all and (max-width: 700px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   &__container{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    @media all and (max-width: 1024px) {
+      flex-direction: column;
+    }
+    @media all and (max-width: 700px) {
+      align-items: center;
+    }
   }
   &__logo{
     width: 170px;
     margin-right: 52px;
+    @media all and (max-width: 1024px) {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
   }
   &__navigation{
     ul{
       display: flex;
       justify-content: space-between;
+      @media all and (max-width: 700px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
       > li{
         margin-right: 40px;
+        @media all and (max-width: 800px) {
+          margin-right: 20px;
+        }
+        @media all and (max-width: 700px) {
+          margin-right: 0;
+        }
         &:last-child{
           margin-right: 0;
         }
@@ -782,6 +1284,9 @@ main{
           color: #FFFFFF;
           padding-bottom: 10px;
           border-bottom: 2px solid #B87D3B;
+          @media all and (max-width: 700px) {
+            border-bottom: none;
+          }
         }
       }
     }
@@ -790,6 +1295,9 @@ main{
     margin-left: 40px;
     font-size: 1.6rem;
     line-height: 120%;
+    @media all and (max-width: 1250px) {
+      display: none;
+    }
   }
 }
 .wp-block-table{
@@ -814,7 +1322,12 @@ main{
 .woocommerce, .entry-content{
   font-size: 1.4rem;
   .woocommerce-breadcrumb{
-    margin: 20px 0;
+    margin: 0 0 20px 0;
+    @media all and (max-width: 500px) {
+      padding: 0;
+      width: 100%;
+      justify-content: center;
+    }
   }
   .woocommerce-ordering{
     z-index: 99;
@@ -825,10 +1338,21 @@ main{
   padding: 10px 10px;
   margin-bottom: 40px;
   margin-top: 40px;
+  @media all and (max-width: 1200px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .woof_redraw_zone{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media all and (max-width: 1024px) {
+      flex-wrap: wrap;
+      margin-right: -10px;
+    }
+    @media all and (max-width: 500px) {
+      margin-right: 0;
+    }
   }
   .woof_container{
     width: auto;
@@ -836,11 +1360,46 @@ main{
     flex: 1;
     margin-bottom: 0;
     padding-bottom: 0;
+    @media all and (max-width: 1024px) {
+      width: calc(50% - 10px);
+      margin-right: 10px;
+      flex: auto;
+      margin-bottom: 10px;
+    }
+    @media all and (max-width: 500px) {
+      width: 100%;
+      margin-right: 0;
+    }
   }
   .woof_submit_search_form_container{
     margin: 0;
     .woof_reset_search_form{
       margin-left: 20px;
+    }
+  }
+}
+.new-product, .best-product{
+    .block-container{
+      @media all and (max-width: 1024px) {
+        padding: 0;
+      }
+    }
+    .custom-slider-loop{
+      #custom-products{
+        display: flex;
+        flex-wrap: nowrap!important;
+      }
+      @media all and (max-width: 1024px) {
+        padding: 0 50px;
+      }
+      @media all and (max-width: 768px) {
+        padding: 0 20px;
+      }
+    }
+  &__title{
+    @media all and (max-width: 768px) {
+      margin-bottom: 20px!important;
+      padding-top: 30px!important;
     }
   }
 }
@@ -853,16 +1412,30 @@ main{
   &__container{
     display: flex;
     justify-content: center;
+    @media all and (max-width: 400px) {
+      flex-wrap: wrap;
+    }
   }
   &__item{
     width: calc(33.33333% - 40px);
     margin: 20px;
     text-align: center;
+    @media all and (max-width: 768px) {
+      max-width: 25%;
+    }
+    @media all and (max-width: 400px) {
+      max-width: none;
+      width: 35%;
+    }
+
   }
   &__img{
     width: 150px;
     height: auto;
     margin: auto;
+    @media all and (max-width: 768px) {
+      max-width: 100%;
+    }
     img{
       object-fit: fill;
       width: 100%;
@@ -871,6 +1444,10 @@ main{
   }
   &__desc{
     margin-top: 20px;
+    @media all and (max-width: 400px) {
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
 }
 .reviewe-form{
@@ -920,6 +1497,9 @@ main{
   h2,h3,h4,h5,h6{
     margin-bottom: 1em;
   }
+  .entry-content{
+    @include elselist;
+  }
   .entry-header{
     height: 100px;
     position: relative;
@@ -927,6 +1507,12 @@ main{
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    @media all and (max-width: 1200px) {
+      margin-bottom: 20px;
+    }
+    @media all and (max-width: 768px) {
+      height: 200px;
+    }
     .post-thumbnail{
       position: absolute;
       top: 0;
@@ -944,7 +1530,22 @@ main{
       z-index: 2;
       font-size: 4rem;
       color: white;
+      line-height: 120%;
+      @media all and (max-width: 1024px) {
+        font-size: 3.4rem;
+      }
+      @media all and (max-width: 768px) {
+        font-size: 3rem;
+      }
+      @media all and (max-width: 500px) {
+        font-size: 2.4rem;
+      }
     }
+  }
+}
+.page-template-about{
+  .entry-header{
+    margin-bottom: 0;
   }
 }
 .woocommerce div.product p.stock{
@@ -1035,6 +1636,16 @@ main{
     display: flex;
     padding: 40px 0;
     border-bottom: 1px solid #B87D3B;
+    @media all and (max-width: 860px) {
+      flex-wrap: wrap;
+    }
+    @media all and (max-width: 500px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      &:first-child{
+        padding-top: 0;
+      }
+    }
     &:last-child{
       border-bottom: none;
     }
@@ -1042,6 +1653,9 @@ main{
   &__img{
     width: 30%;
     overflow-y: hidden;
+    @media all and (max-width: 860px) {
+      width: 100%;
+    }
     img{
       object-fit: cover;
       width: 100%;
@@ -1052,6 +1666,13 @@ main{
     width: calc(70% - 40px);
     margin-left: 40px;
     padding-bottom: 20px;
+    @media all and (max-width: 860px) {
+      width: 100%;
+      margin-left: 0;
+    }
+    @media all and (max-width: 500px) {
+      padding-bottom: 0;
+    }
   }
   &__title{
     font-size: 1.8rem;
@@ -1067,6 +1688,12 @@ main{
 .faq{
   &__content{
     margin-top: 50px;
+    @media all and (max-width: 1024px) {
+      margin-top: 30px;
+    }
+    @media all and (max-width: 500px) {
+      margin-top: 0;
+    }
   }
   h2{
     color: black;
@@ -1097,6 +1724,16 @@ main{
       &:hover{
         background-color: rgba(184,125,59,0.3);
       }
+      &-title{
+        font-size: 2rem;
+        @media all and (max-width: 1024px) {
+          font-size: 1.8rem;
+        }
+        @media all and (max-width: 500px) {
+          font-size: 1.6rem;
+          padding-right: 10px;
+        }
+      }
       .close-item{
         width: 20px;
         height: 20px;
@@ -1124,6 +1761,11 @@ main{
     .faq__answer{
       padding: 20px;
       background-color: #F2F2F2;
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
@@ -1133,14 +1775,26 @@ main{
     position: absolute;
     top: 0;
     right: 0;
+    @media all and (max-width: 1024px) {
+      display: none;
+    }
     .prev, .next{
       margin-left: 40px;
       cursor: pointer;
     }
   }
   &-block{
+    margin-top: 40px;
+    @media all and (max-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     &__header{
       position: relative;
+      @media all and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
       h2{
         margin-bottom: 20px;
       }
@@ -1149,7 +1803,10 @@ main{
       }
     }
     &__container{
-
+      @media all and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     &__wrapper{
 
@@ -1182,18 +1839,31 @@ main{
       line-height: 122%;
       color: white;
       padding: 10px 20px;
+      width: 100%;
       h2{
         color: white;
         font-weight: 500;
         font-size: 2.2rem;
         line-height: 122%;
         margin-bottom: 10px;
+        @media all and (max-width: 1200px) {
+          font-size: 1.8rem;
+        }
+        @media all and (max-width: 768px) {
+          font-size: 1.6rem;
+        }
       }
       p{
         color: rgba(255,255,255,0.8);
         font-weight: 400;
         font-size: 1.6rem;
         line-height: 122%;
+        @media all and (max-width: 1200px) {
+          font-size: 1.4rem;
+        }
+        @media all and (max-width: 768px) {
+          font-size: 1.2rem;
+        }
         &:last-child{
           margin-bottom: 0;
         }
@@ -1201,12 +1871,27 @@ main{
     }
   }
 }
-.history-block, .regions-block{
+.history-block{
+  padding-top: 40px;
+  //h3{
+  //  font-size: 2.6rem;
+  //}
+  @media all and (max-width: 500px) {
+    padding-top: 20px;
+  }
+}
+.regions-block{
   background-color: #F2F2F2;
-  margin-top: 40px;
+  //margin-top: 40px;
   padding: 40px;
-  h3{
-    font-size: 2.6rem;
+  @media all and (max-width: 1400px) {
+    font-size: 1.6rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media all and (max-width: 500px) {
+    padding-bottom: 20px;
+    padding-top: 20px;
   }
 }
 .technology-block{
@@ -1214,6 +1899,35 @@ main{
 }
 .sertificate-block{
   margin-top: 40px;
+  padding-bottom: 40px;
+  h2{
+    @media all and (max-width: 1024px) {
+      padding: 0 50px;
+    }
+    @media all and (max-width: 768px) {
+      padding: 0;
+    }
+  }
+  &__container{
+    @media all and (max-width: 1024px) {
+      padding: 0 50px;
+    }
+    @media all and (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+  @media all and (max-width: 1024px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media all and (max-width: 500px) {
+    padding-bottom: 20px;
+  }
+  .video-navigate{
+    @media all and (max-width: 1024px) {
+      display: none;
+    }
+  }
 }
 .term-gruzovye-shiny{
   #woof_pa_sezonnost_607fd1897888a_content{
@@ -1374,6 +2088,790 @@ main{
       }
       .xoo-el-sidebar{
         display: none;
+      }
+    }
+  }
+}
+#custom_shop_table{
+  tbody{
+    @media all and (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -20px;
+      width: calc(100% + 20px);
+    }
+    @media all and (max-width: 500px) {
+      margin-right: -10px;
+      width: calc(100% + 10px);
+    }
+  }
+  td, th{
+    border: none;
+    @media all and (max-width: 768px) {
+      padding: 0 0 20px 0;
+    }
+  }
+  td{
+    border-bottom: 1px dashed #B0B0B0;
+    @media all and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      border: none;
+      &:before{
+        font-size: 20px;
+        margin-bottom: 15px;
+        @media all and (max-width: 500px) {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  tr{
+    @media all and (max-width: 768px) {
+      width: calc(100% - 20px);
+    }
+  }
+  tr.cart_item{
+    @media all and (max-width: 768px) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px 0 20px;
+      border: 1px solid #F5F5F5;
+      width: calc(50% - 20px);
+      margin-right: 20px;
+      background-color: white!important;
+      td{
+        background-color: white!important;
+      }
+    }
+    @media all and (max-width: 500px) {
+      width: calc(50% - 10px);
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    @media all and (max-width: 400px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  td.product-thumbnail, td.product-remove{
+    padding: 23px 23px 23px 0;
+    a{
+      img{
+        height: 98px;
+        width: auto;
+      }
+    }
+  }
+  td.product-remove{
+    @media all and (max-width: 768px) {
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      a{
+        width: 30px;
+        height: 30px;
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  td.product-thumbnail{
+    img{
+      min-width: 80px;
+    }
+    &:before{
+      display: none;
+    }
+  }
+  td.product-add-to-cart{
+    padding-right: 0;
+    a{
+      //background-color: transparent;
+      //padding-right: 0!important;
+      display: flex!important;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+  }
+  td.product-subtotal{
+    text-align: center;
+    @media all and (max-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      &:before{
+        margin-bottom: 0;
+      }
+    }
+    span{
+      font-size: 18px;
+      line-height: 122%;
+      font-weight: 700;
+      color: #000000;
+    }
+  }
+  td.product-quantity{
+    text-align: center;
+    @media all and (max-width: 400px) {
+      align-items: flex-end;
+    }
+    .quantity__row{
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      @media all and (max-width: 768px) {
+        justify-content: flex-end;
+      }
+      @media all and (max-width: 400px) {
+        width: 50%;
+        .quantity{
+          width: 100%;
+          justify-content: flex-end;
+          input{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  td.product-name, .product-price{
+    a, .options-item, span{
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 122%;
+      color: #000000;
+      @media all and (max-width: 500px) {
+        justify-content: flex-end;
+      }
+    }
+    .product-article{
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 5px;
+      line-height: 122%;
+      color: #A6A9AA;
+    }
+  }
+  td.product-name{
+    @media all and (max-width: 768px) {
+      flex: 1;
+    }
+  }
+  thead{
+    th{
+      font-weight: 500;
+    }
+    th.product-name{
+      padding: 15px 23px 15px 33px;
+    }
+    th.product-quantity, th.product-subtotal{
+      text-align: center;
+    }
+  }
+  #actions-group{
+    background-color: #F5F5F5!important;
+    padding: 34px 29px 37px 46px;
+    border-bottom: none;
+    @media all and (max-width: 500px) {
+      width: calc(100% + 10px);
+      padding: 20px 20px 0 20px;
+    }
+    td, th{
+      border: none;
+    }
+    .actions-group-wrapper{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .cart-left-part{
+      width: 50%;
+      @media all and (max-width: 1040px) {
+        width: 100%;
+      }
+      > .button{
+        display: none;
+      }
+    }
+    .cart-subtotal, .cart-discount{
+      th{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 122%;
+        color: #000000!important;
+        text-align: right;
+      }
+      td{
+        text-align: right;
+      }
+      span{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 122%;
+        color: #001317;
+      }
+      .woocommerce-remove-coupon{
+        color: #b87d3b;
+      }
+    }
+    .order-total{
+      th{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 122%;
+        color: #000000!important;
+        text-align: right;
+      }
+      td{
+        text-align: right;
+      }
+      .woocommerce-Price-amount{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 122%;
+        color: #b87d3b;
+      }
+    }
+    .cart-right-part{
+      width: 38%;
+      @media all and (max-width: 1040px) {
+        width: 100%;
+      }
+      @media all and (max-width: 500px) {
+        table{
+          margin-bottom: 0;
+        }
+      }
+    }
+    .coupon{
+      width: 100%;
+      &__row {
+        display: flex;
+        margin-top: 10px;
+        @media all and (max-width: 500px) {
+          flex-direction: column;
+        }
+        #coupon_code {
+          flex: 1;
+          margin-right: 0!important;
+          border: 1px solid #A6A9AA!important;
+          padding-left: 23px;
+          border-radius: 0;
+          @media all and (max-width: 500px) {
+            width: 100%;
+            padding: 15px 23px;
+            margin-bottom: 10px;
+          }
+          &::placeholder{
+            color: #E5E7E8;
+          }
+        }
+
+        .button {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 122%;
+          color: #FFFFFF;
+          padding: 17px;
+          width: 37%;
+          display: flex;
+          justify-content: center;
+          background-color: #001317;
+          border-radius: 0;
+          @media all and (max-width: 500px) {
+            width: 100%;
+          }
+        }
+      }
+      span{
+        width: 100%;
+        display: block;
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 122%;
+        color: #001317;
+      }
+    }
+  }
+}
+.checkout{
+  display: flex;
+  flex-wrap: wrap;
+  .optional{
+    display: none;
+  }
+  #customer_details{
+    .woocommerce-additional-fields{
+      #order_comments_field label{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 122%;
+        color: #001317;
+        margin-top: 13px;
+        margin-bottom: 10px;
+      }
+      textarea{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 122%;
+        color: #000000;
+        padding: 15px 23px;
+        width: 100%;
+        min-height: 128px;
+        border: 1px solid #A6A9AA;
+        &::placeholder{
+          color: #E5E7E8;
+        }
+      }
+    }
+  }
+  &__footer{
+    width: 100%;
+    display: flex;
+    margin-top: 52px;
+    flex-wrap: wrap;
+    &-desc{
+      width: 62%;
+      @media all and (max-width: 920px) {
+        width: 55%;
+      }
+      @media all and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    &-btn{
+      width: calc(38% - 95px);
+      margin-left: 95px;
+      @media all and (max-width: 920px) {
+        width: calc(45% - 95px);
+      }
+      @media all and (max-width: 768px) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 40px;
+      }
+      #place_order{
+        background-color: #b87d3b;
+        display: inline-block;
+        margin: auto;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 122%;
+        color: #FFFFFF;
+        padding: 14px 62px;
+        @media all and (max-width: 1100px) {
+          padding: 14px 20px;
+        }
+        border: none;
+        transition: .2s;
+        width: 100%;
+        text-align: center;
+        &:hover{
+          background-color: #b87d3b;
+        }
+      }
+    }
+  }
+  #custom_shop_table{
+    #actions-group{
+      padding: 27px 25px;
+      .cart-right-part{
+        width: 100%;
+      }
+      th{
+        font-weight: 400;
+      }
+      td{
+        width: 180px;
+        span, bdi{
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 122%;
+          color: #001317;
+        }
+      }
+      th,td{
+        padding: 0;
+      }
+      .actions-group-wrapper{
+        justify-content: flex-end;
+      }
+      table{
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+  &__left-column{
+    width: 62%;
+    @media all and (max-width: 948px) {
+      width: 100%;
+      #actions-group{
+        @media all and (max-width: 500px) {
+          padding: 20px!important;
+        }
+        .cart_totals{
+          .order-total{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            th{
+              display: inline-block;
+              @media all and (max-width: 500px) {
+                flex: 1;
+                font-size: 14px!important;
+                margin-right: 20px;
+              }
+            }
+            td{
+              display: inline-block;
+              @media all and (max-width: 500px) {
+                font-size: 14px!important;
+                width: auto!important;
+              }
+              &:before{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__subj{
+    font-size: 12px;
+    line-height: 122%;
+    color: #A6A9AA;
+    margin-top: 8px;
+    display: block;
+  }
+  &__person, &__dostavka-select{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: -27px;
+    @media all and (max-width: 600px) {
+      margin-right: 0;
+    }
+    #shipping_method{
+      width: 100%;
+      @include elseradio;
+      label{
+        color: #000000!important;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 122%;
+        margin-bottom: 20px;
+        display: flex!important;
+        width: 100%;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        @media all and (max-width: 600px) {
+          font-size: 14px;
+        }
+        input:checked + span{
+          &:before{
+            border-color: #b87d3b;
+          }
+        }
+      }
+    }
+    p.form-row{
+      float: none;
+      clear: both;
+      width: calc(50% - 27px);
+      margin-right: 27px;
+      margin-bottom: 20px;
+      padding: 0;
+      @media all and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
+      label{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 122%;
+        color: #001317;
+        margin-bottom: 10px;
+        @media all and (max-width: 600px) {
+          font-size: 14px;
+        }
+      }
+      input{
+        padding: 14px 23px;
+        font-size: 18px;
+        line-height: 122%;
+        color: #001317;
+        @media all and (max-width: 600px) {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+  &__pay-select{
+    .checkout__title{
+      margin-top: 30px;
+    }
+    #payment{
+      background-color: transparent;
+      @include elseradio;
+      .form-row{
+        display: none;
+      }
+      .woocommerce-terms-and-conditions-wrapper{
+        display: none;
+      }
+      .payment_box{
+        display: none!important;
+      }
+      ul.payment_methods{
+        padding: 0;
+        border-bottom: none;
+      }
+      .form-row{
+        padding: 0;
+      }
+      img{
+        display: none!important;
+      }
+      label{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 122%;
+        color: #000000;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-start;
+        @media all and (max-width: 600px) {
+          font-size: 14px;
+        }
+        input:checked + span{
+          &:before{
+            border-color: #b87d3b;
+          }
+        }
+      }
+    }
+  }
+  &__right-column{
+    width: calc(38% - 95px);
+    margin-left: 95px;
+    @media all and (max-width: 948px) {
+      width: 100%;
+      margin-left: 0;
+    }
+    #order_review{
+      background-color: #F5F5F5;
+      padding: 35px 29px 26px 29px;
+      .shop_table{
+        margin-bottom: 0;
+      }
+      .order-total{
+        th{
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 122%;
+          color: #000000;
+        }
+        td{
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          color: #b87d3b;
+        }
+      }
+      tbody{
+        display: none;
+      }
+      td{
+        border: none;
+        padding: 0 0 12px 0;
+        text-align: right;
+        font-size: 18px;
+        line-height: 122%;
+      }
+      th{
+        border: none;
+        font-size: 18px;
+        line-height: 122%;
+        color: #000000!important;
+        font-weight: 400;
+        padding: 0 0 12px 0;
+      }
+      thead{
+        display: none;
+      }
+      .woocommerce-shipping-totals{
+        display: none;
+      }
+    }
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 122%;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 33px;
+  }
+  &__products{
+    .checkout__title{
+      margin-bottom: 10px;
+    }
+  }
+}
+.woocommerce-checkout {
+  h3{
+    display: none;
+  }
+  .page-product-category{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .woocommerce-order{
+
+  }
+  .woocommerce-order-details{
+    @media all and (max-width: 768px) {
+      tr{
+        display: flex;
+        justify-content: space-between;
+        td{
+          display: inline-block;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+#yith-wcwl-form{
+  .product-add-to-cart{
+    @media all and (max-width: 768px) {
+      display: flex;
+      justify-content: flex-end;
+      a{
+        margin-left: 0!important;
+        margin-right: auto!important;
+      }
+    }
+  }
+}
+.cart-button-wrapper{
+  .single_add_to_cart_button, .single_add_to_wishlist{
+    margin-bottom: 20px!important;
+  }
+}
+.site-main{
+  &.poleznoe{
+    margin-bottom: 0;
+  }
+}
+.home{
+  .site-main{
+    @media all and (max-width: 440px) {
+      margin-bottom: 0px;
+    }
+  }
+}
+.tax-product_cat{
+  .woocommerce-ordering{
+    @media all and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  .custom-slider-loop{
+    width: 100%;
+    #custom-products{
+      flex-wrap: wrap;
+      margin-right: -30px;
+      width: calc(100% + 40px);
+      @media all and (max-width: 1024px) {
+        width: calc(100% + 20px);
+        margin-right: -20px;
+      }
+      .custom-product{
+        @media all and (max-width: 1024px) {
+          width: calc(33.3333% - 20px);
+          margin-bottom: 20px;
+        }
+        @media all and (max-width: 600px) {
+          width: calc(50% - 20px);
+          margin-bottom: 20px;
+        }
+        @media all and (max-width: 440px) {
+          width: calc(100% - 20px);
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+.about__rekvizits-block{
+  margin-top: 40px;
+  @media all and (max-width: 500px) {
+    margin-top: 20px;
+  }
+}
+.socials-contacts{
+  &__title{
+    margin-bottom: 20px!important;
+    margin-top: 40px;
+    font-size: 2.4rem;
+    @media all and (max-width: 768px) {
+      margin-top: 1.8rem;
+    }
+    @media all and (max-width: 500px) {
+      margin-top: 1.6rem;
+    }
+  }
+  &__list{
+    display: flex;
+  }
+  &__item{
+    margin-right: 20px;
+  }
+}
+.woocommerce-shop{
+  #custom-products{
+    flex-wrap: wrap;
+    margin-right: -40px;
+    width: calc(100% + 40px);
+    @media all and (max-width: 600px) {
+      margin-right: -20px;
+      width: calc(100% + 20px);
+    }
+    @media all and (max-width: 500px) {
+      width: 100%;
+      margin-right: 0;
+    }
+    .product-category{
+      width: calc(25% - 40px);
+      margin-right: 40px;
+      margin-bottom: 40px;
+      @media all and (max-width: 1024px) {
+        width: calc(33.3333% - 40px);
+      }
+      @media all and (max-width: 600px) {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      @media all and (max-width: 500px) {
+        width: 100%;
+        margin-right: 0;
       }
     }
   }
