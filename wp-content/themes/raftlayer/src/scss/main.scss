@@ -402,6 +402,7 @@ body{
     }
   }
   &__title{
+    text-shadow: #000000 1px 0 10px;
     @media all and (max-width: 500px) {
       width: 100%;
       text-align: left;
@@ -451,6 +452,7 @@ body{
       font-size: 1.8rem;
       line-height: 122%;
       color: #FFFFFF;
+      text-shadow: #000000 1px 0 10px;
       @media all and (max-width: 980px) {
         font-size: 1.6rem;
       }
@@ -1531,6 +1533,7 @@ body{
       font-size: 4rem;
       color: white;
       line-height: 120%;
+      text-shadow: #000000 1px 0 10px;
       @media all and (max-width: 1024px) {
         font-size: 3.4rem;
       }
@@ -1636,6 +1639,7 @@ body{
     display: flex;
     padding: 40px 0;
     border-bottom: 1px solid #B87D3B;
+    width: 100%;
     @media all and (max-width: 860px) {
       flex-wrap: wrap;
     }

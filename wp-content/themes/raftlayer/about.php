@@ -129,16 +129,16 @@ get_header();
                     <?php the_field('opisanie_regionalnye_predstavitelstva', 16);?>
                 </div>
             </section>
-            <section class="about__rekvizits-block rekvizits-block">
-                <div class="rekvizits-block__header block-container">
-                    <h2>
-                        <?php the_field('zagolovok_regionalnye_predstavitelstva', 16);?>
-                    </h2>
-                </div>
-                <div class="rekvizits-block__content block-container">
-                    <?php the_field('opisanie_regionalnye_predstavitelstva', 16);?>
-                </div>
-            </section>
+<!--            <section class="about__rekvizits-block rekvizits-block">-->
+<!--                <div class="rekvizits-block__header block-container">-->
+<!--                    <h2>-->
+<!--                        --><?php //the_field('zagolovok_regionalnye_predstavitelstva', 16);?>
+<!--                    </h2>-->
+<!--                </div>-->
+<!--                <div class="rekvizits-block__content block-container">-->
+<!--                    --><?php //the_field('opisanie_regionalnye_predstavitelstva', 16);?>
+<!--                </div>-->
+<!--            </section>-->
         </article>
     </main><!-- #main -->
 <?php
