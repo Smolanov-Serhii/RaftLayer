@@ -233,14 +233,14 @@ $(document ).ready(function() {
     }
 
     if (  jQuery(window).width() >= 1100 ) {
-        var FirstCoord = 53.925701;
-        var SecondCoord = 30.341069;
+        var FirstCoord = 56.793420;
+        var SecondCoord = 61.310791;
 
-        var CenterFirstCoord = 53.925678;
-        var CenterSecondCoord = 30.338758;
+        var CenterFirstCoord =  56.793284;
+        var CenterSecondCoord = 61.306063;
     } else {
-        var FirstCoord = 53.925701;
-        var SecondCoord = 30.341069;
+        var FirstCoord = 56.793420;
+        var SecondCoord = 61.310791;
 
         var CenterFirstCoord = FirstCoord;
         var CenterSecondCoord = SecondCoord;
@@ -250,7 +250,7 @@ $(document ).ready(function() {
         var myMap = new ymaps.Map('map', {
                 center: [CenterFirstCoord, CenterSecondCoord],
                 controls: [],
-                zoom: 18
+                zoom: 17
             }, {
                 searchControlProvider: true
             }),

@@ -1,4 +1,178 @@
 <?php
+//bitrix24 
+//
+//
+
+add_action( 'woocommerce_thankyou', 'my_custom_tracking' );
+function my_custom_tracking( $order_id ) {
+
+  // Получаем информации по заказу
+  $order = wc_get_order( $order_id );
+  $order_data = $order->get_data();
+
+  // Получаем базовую информация по заказу
+  $order_id = $order_data['id'];
+  $order_currency = $order_data['currency'];
+  $order_payment_method_title = $order_data['payment_method_title'];
+  $order_shipping_totale = $order_data['shipping_total'];
+  $order_total = $order_data['total'];
+
+  $order_base_info = "<hr><strong>Общая информация по заказу</strong><br>
+  ID заказа: $order_id<br>
+  Валюта заказа: $order_currency<br>
+  Метода оплаты: $order_payment_method_title<br>
+  Стоимость доставки: $order_shipping_totale<br>
+  Итого с доставкой: $order_total<br>";
+
+  // Получаем информация по клиенту
+  $order_customer_id = $order_data['customer_id'];
+  $order_customer_ip_address = $order_data['customer_ip_address'];
+  $order_billing_first_name = $order_data['billing']['first_name'];
+  $order_billing_last_name = $order_data['billing']['last_name'];
+  $order_billing_email = $order_data['billing']['email'];
+  $order_billing_phone = $order_data['billing']['phone'];
+
+  $order_client_info = "<hr><strong>Информация по клиенту</strong><br>
+  ID клиента = $order_customer_id<br>
+  IP адрес клиента: $order_customer_ip_address<br>
+  Имя клиента: $order_billing_first_name<br>
+  Фамилия клиента: $order_billing_last_name<br>
+  Email клиента: $order_billing_email<br>
+  Телефон клиента: $order_billing_phone<br>";
+
+  // Получаем информацию по доставке
+  $order_shipping_address_1 = $order_data['shipping']['address_1'];
+  $order_shipping_address_2 = $order_data['shipping']['address_2'];
+  $order_shipping_city = $order_data['shipping']['city'];
+  $order_shipping_state = $order_data['shipping']['state'];
+  $order_shipping_postcode = $order_data['shipping']['postcode'];
+  $order_shipping_country = $order_data['shipping']['country'];
+
+  $order_shipping_info = "<hr><strong>Информация по доставке</strong><br>
+  Страна доставки: $order_shipping_state<br>
+  Город доставки: $order_shipping_city<br>
+  Индекс: $order_shipping_postcode<br>
+  Адрес доставки 1: $order_shipping_address_1<br>
+  Адрес доставки 2: $order_shipping_address_2<br>";
+
+  // Получаем информации по товару
+  $order->get_total();
+  $line_items = $order->get_items();
+  foreach ( $line_items as $item ) {
+    $product = $order->get_product_from_item( $item );
+    $sku = $product->get_sku(); // артикул товара
+    $id = $product->get_id(); // id товара
+    $name = $product->get_name(); // название товара
+    $description = $product->get_description(); // описание товара
+    $stock_quantity = $product->get_stock_quantity(); // кол-во товара на складе
+    $qty = $item['qty']; // количество товара, которое заказали
+    $total = $order->get_line_total( $item, true, true ); // стоимость всех товаров, которые заказали, но без учета доставки
+
+    $product_info[] = "<hr><strong>Информация о товаре</strong><br>
+    Название товара: $name<br>
+    ID товара: $id<br>
+    Артикул: $sku<br>
+    Описание: $description<br>
+    Заказали (шт.): $qty<br>
+    Наличие (шт.): $stock_quantity<br>
+    Сумма заказа (без учета доставки): $total;";
+  }
+
+  $product_base_infо = implode('<br>', $product_info);
+
+  $subject = "Заказ с сайта № $order_id";
+
+  // Формируем URL в переменной $queryUrl для отправки сообщений в лиды Битрикс24, где
+  // указываем [ваше_название], [идентификатор_пользователя] и [код_вебхука]
+  $queryUrl = 'https://raftlayer.bitrix24.ru/rest/1/7t635ln01dbb01ja/crm.lead.add.json';
+  // Формируем параметры для создания лида в переменной $queryData
+  $queryData = http_build_query(array(
+    'fields' => array(
+	  'TITLE' => $subject,
+	  'NAME' => $order_billing_first_name.' '.$order_billing_last_name,
+	  "PHONE" => array(array("VALUE" => $order_billing_phone, "VALUE_TYPE" => "WORK" )),
+	  "EMAIL" => array(array("VALUE" => $order_billing_email, "VALUE_TYPE" => "WORK" )),
+      'COMMENTS' => $order_base_info.' '.$order_client_info.' '.$order_shipping_info.' '.$product_base_infо
+    ),
+    'params' => array("REGISTER_SONET_EVENT" => "Y")
+  ));
+
+  // Обращаемся к Битрикс24 при помощи функции curl_exec
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_SSL_VERIFYPEER => 0,
+    CURLOPT_POST => 1,
+    CURLOPT_HEADER => 0,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => $queryUrl,
+    CURLOPT_POSTFIELDS => $queryData,
+  ));
+  $result = curl_exec($curl);
+  curl_close($curl);
+  $result = json_decode($result, 1);
+
+  if (array_key_exists('error', $result)) echo "Ошибка при сохранении лида: ".$result['error_description']."<br>";
+}
+
+
+// Вызываем функцию для перехвата данных
+add_action( 'wpcf7_mail_sent', 'your_wpcf7_mail_sent_function' );
+function your_wpcf7_mail_sent_function( $contact_form ) {
+
+  // Перехватываем данные из Contact Form 7
+  $title = $contact_form->title;
+  $posted_data = $contact_form->posted_data;
+  //Вместо "Контактная форма 1" необходимо указать название вашей контактной формы
+
+    $submission = WPCF7_Submission::get_instance();
+    $posted_data = $submission->get_posted_data();
+    // Далее перехватываем введенные данные в полях Contact Form 7:
+    // 1. Перехватываем поле [your-name]
+    if (isset($_POST['namepeople']) && !empty($_POST['namepeople']))
+	{
+		$posted_data['text-427'] = $_POST['namepeople'];
+	}
+    if (isset($_POST['mask-564']) && !empty($_POST['mask-564']))
+	{
+		$posted_data['mask-555'] = $_POST['mask-564'];
+	}	
+    $firstName = $posted_data['text-427'];
+    // 2. Перехватываем поле [your-message]
+    $userPhone = $posted_data['mask-555']; 
+    
+    // Формируем URL в переменной $queryUrl для отправки сообщений в лиды Битрикс24, где
+    // указываем [ваше_название], [идентификатор_пользователя] и [код_вебхука]
+    $queryUrl = 'https://raftlayer.bitrix24.ru/rest/1/7t635ln01dbb01ja/crm.lead.add.json';
+    // Формируем параметры для создания лида в переменной $queryData
+    $queryData = http_build_query(array(
+      'fields' => array(
+        // Устанавливаем название для заголовка лида
+        'TITLE' => 'Заявка с сайта raftlayer96.ru',
+        'NAME' => $firstName,
+		"PHONE" => array(array("VALUE" => $userPhone, "VALUE_TYPE" => "WORK" )),
+        'COMMENTS' => $message,
+      ),
+      'params' => array("REGISTER_SONET_EVENT" => "Y")
+    ));
+
+    // Обращаемся к Битрикс24 при помощи функции curl_exec
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => 0,
+      CURLOPT_POST => 1,
+      CURLOPT_HEADER => 0,
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => $queryUrl,
+      CURLOPT_POSTFIELDS => $queryData,
+    ));
+    $result = curl_exec($curl);
+    curl_close($curl);
+    $result = json_decode($result, 1);
+
+    if (array_key_exists('error', $result)) echo "Ошибка при сохранении лида: ".$result['error_description']."<br/>";
+  
+}
+
 /**
  * RaftLayer functions and definitions
  *
@@ -195,7 +369,7 @@ function mytheme_add_woocommerce_support(){
 add_action('after_setup_theme','mytheme_add_woocommerce_support');
 add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider');
+//add_theme_support( 'wc-product-gallery-slider');
 
 if( function_exists('acf_add_options_page') ) {
 

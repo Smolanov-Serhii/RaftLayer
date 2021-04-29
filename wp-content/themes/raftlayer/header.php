@@ -19,6 +19,8 @@
     <meta content='width' name='MobileOptimized'/>
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri()?>/images/favicon.jpg" type="image/jpg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;900&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>

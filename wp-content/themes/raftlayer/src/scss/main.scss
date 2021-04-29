@@ -1616,7 +1616,7 @@ body{
   .quantity__row{
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     .quantity{
       margin-right: 40px;
     }
@@ -2264,8 +2264,24 @@ body{
     }
   }
   td.product-name{
+    a{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .variation{
+      display: flex;
+      align-items: flex-end;
+      font-size: 12px;
+      p{
+        font-size: 12px;
+        padding-left: 10px!important;
+      }
+    }
     @media all and (max-width: 768px) {
       flex: 1;
+      .variation{
+        justify-content: flex-end;
+      }
     }
   }
   thead{

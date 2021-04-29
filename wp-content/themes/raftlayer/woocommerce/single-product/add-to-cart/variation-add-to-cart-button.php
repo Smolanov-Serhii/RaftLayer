@@ -27,11 +27,11 @@ global $product;
 
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
-    <div class="razmery-wrapper">
-        <a href="<?php echo the_field('kartinka_razmerov', 'options')?>" class="razmety-lnk fresco" id="razmery-lnk">
-            <?php the_field('nadpis_tablicza_razmerov', 'options')?>
-        </a>
-    </div>
+<!--    <div class="razmery-wrapper">-->
+<!--        <a href="--><?php //echo the_field('kartinka_razmerov', 'options')?><!--" class="razmety-lnk fresco" id="razmery-lnk">-->
+<!--            --><?php //the_field('nadpis_tablicza_razmerov', 'options')?>
+<!--        </a>-->
+<!--    </div>-->
 
 
     <div class="cart-button-wrapper">
