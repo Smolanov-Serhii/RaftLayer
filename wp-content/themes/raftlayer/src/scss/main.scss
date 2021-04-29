@@ -1324,7 +1324,10 @@ body{
 .woocommerce, .entry-content{
   font-size: 1.4rem;
   .woocommerce-breadcrumb{
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
+    @media all and (max-width: 980px) {
+      margin-top: 0;
+    }
     @media all and (max-width: 500px) {
       padding: 0;
       width: 100%;
@@ -2807,6 +2810,9 @@ body{
   }
 }
 .tax-product_cat{
+  .woocommerce-breadcrumb{
+    margin: 0;
+  }
   .woocommerce-ordering{
     @media all and (max-width: 500px) {
       width: 100%;

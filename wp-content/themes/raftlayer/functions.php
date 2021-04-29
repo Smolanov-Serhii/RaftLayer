@@ -568,7 +568,7 @@ remove_action('load-update-core.php', 'wp_update_plugins');
 add_filter('pre_site_transient_update_plugins', create_function('$a', "return null;") );
 wp_clear_scheduled_hook('wp_update_plugins');
 
-add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99 );
+//add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99 );
 
 // Отключаем ненужные поля ввода при заказе
 add_filter('woocommerce_checkout_fields','remove_checkout_fields');
