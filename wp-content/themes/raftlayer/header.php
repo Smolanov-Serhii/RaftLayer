@@ -33,6 +33,16 @@
             <div class="header__mobile-fade">
             </div>
             <div class="header__mobile-menu">
+                <nav class="icon-nav">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'page-icon',
+                            'menu_id'        => 'page-icon',
+                        )
+                    );
+                    ?>
+                </nav>
                 <nav id="top-menu-item" class="top-menu-item">
                     <?php
                     wp_nav_menu(
@@ -181,6 +191,16 @@
                 <div class="header__get-call js-get-call brown-button">
                     <?php the_field('nadpis_zakazat_zvonok', 'options')?>
                 </div>
+                <nav class="icon-nav">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'page-icon',
+                            'menu_id'        => 'page-icon',
+                        )
+                    );
+                    ?>
+                </nav>
             </div>
         </div>
         <div class="header__second">

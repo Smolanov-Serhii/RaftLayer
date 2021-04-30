@@ -225,6 +225,7 @@ if ( ! function_exists( 'raftlayer_setup' ) ) :
 		register_nav_menus(
 			array(
 				'top-menu' => esc_html__( 'Верхнее страниц', 'raftlayer' ),
+				'page-icon' => esc_html__( 'Меню иконок', 'raftlayer' ),
 				'page-menu' => esc_html__( 'Меню страниц', 'raftlayer' ),
 				'category-menu' => esc_html__( 'Меню категорий', 'raftlayer' ),
 				'footer-menu' => esc_html__( 'Футер меню', 'raftlayer' ),
@@ -604,3 +605,4 @@ add_filter('woocommerce_get_image_size_thumbnail', function ($size) {
         'crop' => 0,
     );
 });
+add_filter( 'wc_product_sku_enabled', '__return_false' );
