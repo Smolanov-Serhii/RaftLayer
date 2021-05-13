@@ -35,12 +35,12 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d325ee9d-883e-46b0-a064-7900b7b320c5&lang=ru_RU" type="text/javascript" defer></script>
-<script src="<?php echo get_template_directory_uri() ?>/src/js/fresco.js" defer></script>
+<!--<script src="--><?php //echo get_template_directory_uri() ?><!--/src/js/fresco.js" defer></script>-->
 <script src="<?php echo get_template_directory_uri() ?>/dist/js/common.js" defer></script>
 <?php wp_footer(); ?>
 

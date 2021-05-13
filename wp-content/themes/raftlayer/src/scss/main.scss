@@ -881,9 +881,13 @@ body{
     }
   }
   &__content{
-    padding: 12px 20px 20px 20px;
+    padding: 50px 20px 20px 20px;
     position: relative;
     background-color: #FFFFFF;
+    flex: 1;
+    @media all and (max-width: 1240px) {
+      padding: 20px 20px 20px 20px;
+    }
     @media all and (max-width: 500px) {
       padding: 10px;
     }
@@ -929,6 +933,8 @@ body{
     margin-right: -9px;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+    align-items: stretch;
     @media all and (max-width: 1024px) {
       margin-right: -20px;
     }
@@ -940,6 +946,9 @@ body{
     width: calc(25% - 9px);
     margin-right: 9px;
     border: 1px solid #B2916B;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     @media all and (max-width: 1024px) {
       width: calc(50% - 20px);
       margin-right: 20px;
@@ -1385,6 +1394,10 @@ body{
   font-size: 1.4rem;
   .woocommerce-breadcrumb{
     margin: 20px 0 20px 0;
+    color: black;
+    a{
+      color: darkred;
+    }
     @media all and (max-width: 980px) {
       margin-top: 0;
     }
@@ -3156,4 +3169,27 @@ body{
     }
   }
 }
+.woocommerce-button.wc-cancel-order{
+  margin-left: 10px!important;
+  @media all and (max-width: 440px) {
+    margin-left: 0!important;
+    margin-top: 10px!important;
+  }
+}
+.xt_woovs-swatches{
+  li{
+    position: relative;
+    a.custom-color-popup{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        width: 24px;
+        height: auto;
+      }
+    }
+    div.swatch-image{
 
+    }
+  }
+}
