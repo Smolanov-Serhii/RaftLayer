@@ -131,7 +131,7 @@
                                 <path d="M8.5 18C9.32843 18 10 17.3284 10 16.5C10 15.6716 9.32843 15 8.5 15C7.67157 15 7 15.6716 7 16.5C7 17.3284 7.67157 18 8.5 18Z" fill="#001317"/>
                                 <path d="M15.5 18C16.3284 18 17 17.3284 17 16.5C17 15.6716 16.3284 15 15.5 15C14.6716 15 14 15.6716 14 16.5C14 17.3284 14.6716 18 15.5 18Z" fill="#001317"/>
                             </svg>
-                            <span class="fix_cart_count"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
+                            <span class="fix_cart_count basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
                         </span>
                             <?php
                             $currency_symbol = html_entity_decode(get_woocommerce_currency_symbol());
@@ -235,7 +235,7 @@
                                 <path d="M8.5 18C9.32843 18 10 17.3284 10 16.5C10 15.6716 9.32843 15 8.5 15C7.67157 15 7 15.6716 7 16.5C7 17.3284 7.67157 18 8.5 18Z" fill="#001317"/>
                                 <path d="M15.5 18C16.3284 18 17 17.3284 17 16.5C17 15.6716 16.3284 15 15.5 15C14.6716 15 14 15.6716 14 16.5C14 17.3284 14.6716 18 15.5 18Z" fill="#001317"/>
                             </svg>
-                            <span class="fix_cart_count"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
+                            <span class="fix_cart_count basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
                         </span>
                             <?php
                             $currency_symbol = html_entity_decode(get_woocommerce_currency_symbol());

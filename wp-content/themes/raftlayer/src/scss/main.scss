@@ -271,7 +271,7 @@ body{
         }
       }
 
-      .fix_cart_count {
+      .fix_cart_count, .basket-btn__counter{
         position: absolute;
         top: -2px;
         right: -5px;
@@ -754,6 +754,7 @@ body{
     }
   }
 }
+
 #custom-products{
   display: flex;
   justify-content: flex-start;
@@ -805,7 +806,7 @@ body{
     margin-bottom: 11px;
     bdi{
       font-weight: 600;
-      font-size: 2.4rem;
+      font-size: 1.6rem;
       line-height: 120%;
       text-align: center;
       color: #403F3E;
@@ -1449,6 +1450,9 @@ body{
       }
     }
     .custom-slider-loop{
+      .by-vendor-name{
+        display: none;
+      }
       #custom-products{
         display: flex;
         flex-wrap: nowrap!important;
@@ -1686,7 +1690,52 @@ body{
 }
 .post-type-archive-product{
   #custom-products{
-    margin-right: 0;
+    flex-wrap: wrap;
+    margin-right: -40px;
+    width: calc(100% + 40px);
+    @media all and (max-width: 1024px) {
+      margin-right: -20px;
+      width: calc(100% + 20px);
+    }
+    @media all and (max-width: 450px) {
+      margin-right: -10px;
+      width: calc(100% + 10px);
+    }
+    @media all and (max-width: 400px) {
+      width: 100%;
+      margin-right: 0;
+    }
+    &:before{
+      display: none;
+    }
+    &:after{
+      display: none;
+    }
+    .product-category{
+      width: calc(25% - 40px);
+      margin-right: 40px;
+      margin-bottom: 40px;
+      @media all and (max-width: 1024px) {
+        width: calc(33.333% - 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      @media all and (max-width: 550px) {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      @media all and (max-width: 450px) {
+        width: calc(50% - 10px);
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      @media all and (max-width: 400px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 .poleznoe{
@@ -2418,12 +2467,6 @@ body{
       td{
         text-align: right;
       }
-      .woocommerce-Price-amount{
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 122%;
-        color: #b87d3b;
-      }
     }
     .cart-right-part{
       width: 38%;
@@ -2875,6 +2918,10 @@ body{
 .tax-product_cat{
   .woocommerce-breadcrumb{
     margin: 0;
+    color: black;
+    a{
+      color: darkred;
+    }
   }
   .woocommerce-ordering{
     @media all and (max-width: 500px) {
@@ -2890,6 +2937,15 @@ body{
       @media all and (max-width: 1024px) {
         width: calc(100% + 20px);
         margin-right: -20px;
+      }
+      .price{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        span{
+          margin: 0 5px;
+        }
       }
       .custom-product{
         @media all and (max-width: 1024px) {
@@ -3022,3 +3078,82 @@ body{
     }
   }
 }
+.added_to_cart.wc-forward{
+  display: none!important;
+}
+.myaccount-menu a{
+  padding-left: 1em!important;
+}
+.user-profile{
+  .user-info{
+    margin-top: 2em;
+  }
+}
+.yith-frontend-manager-for-woocommerce{
+  max-width: none!important;
+}
+.woocommerce-Price-amount{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 122%;
+  color: #b87d3b;
+  margin-left: 0;
+  //margin-bottom: 20px;
+  display: block;
+  bdi{
+    margin-left: 0;
+  }
+}
+.woocommerce-table__product-name{
+  a{
+    font-size: 1.6em;
+    font-weight: bolder;
+  }
+}
+.wc-item-meta{
+  padding-left: 0!important;
+  li{
+    font-size: 1.2em;
+    margin-bottom: 0;
+    p{
+      font-size: inherit;
+    }
+  }
+  .wc-item-meta-label{
+    font-weight: normal;
+  }
+  a{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+.woocommerce.post-type-archive{
+  ul.products{
+    li.product{
+      a{
+        img{
+          margin-bottom: 0;
+        }
+        h2.woocommerce-loop-category__title{
+          background-color: #b87d3b;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media all and (max-width: 450px) {
+            padding: 10px;
+          }
+          .count{
+            background-color: transparent;
+            font-size: 2em;
+            color: white;
+            margin-left: 20px;
+            @media all and (max-width: 450px) {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

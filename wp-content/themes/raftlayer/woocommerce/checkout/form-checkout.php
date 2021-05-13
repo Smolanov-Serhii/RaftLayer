@@ -31,6 +31,9 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
     <div class="checkout__left-column">
+        <div class="checkout__info">
+            <?php the_field('nadpis_zakaz_budet_otpravlen_posle_utochneniya_ili_proverki_vseh_dannyh_klienta','options');?>
+        </div>
         <div class="checkout__title">
             <?php the_field('nadpis_kontaktnaya_informacziya','options');?>
         </div>

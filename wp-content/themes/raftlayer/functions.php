@@ -31,6 +31,7 @@ function my_custom_tracking( $order_id ) {
   $order_billing_last_name = $order_data['billing']['last_name'];
   $order_billing_email = $order_data['billing']['email'];
   $order_billing_phone = $order_data['billing']['phone'];
+ 
 
   $order_client_info = "<hr><strong>Информация по клиенту</strong><br>
   ID клиента = $order_customer_id<br>
@@ -55,9 +56,13 @@ function my_custom_tracking( $order_id ) {
   Адрес доставки 1: $order_shipping_address_1<br>
   Адрес доставки 2: $order_shipping_address_2<br>";
 
+	
+
+	
   // Получаем информации по товару
   $order->get_total();
   $line_items = $order->get_items();
+
   foreach ( $line_items as $item ) {
     $product = $order->get_product_from_item( $item );
     $sku = $product->get_sku(); // артикул товара
@@ -75,8 +80,21 @@ function my_custom_tracking( $order_id ) {
     Описание: $description<br>
     Заказали (шт.): $qty<br>
     Наличие (шт.): $stock_quantity<br>
-    Сумма заказа (без учета доставки): $total;";
+    Сумма заказа (без учета доставки): $total;"."
+	
+	";
   }
+	
+  $_SESSION['order_id'] = $order_id;
+  $_SESSION['name'] = $order_data['billing']['first_name'].' '.$order_data['billing']['last_name'];
+  $_SESSION['email'] = $order_data['billing']['email'];
+  $_SESSION['phone'] = $order_data['billing']['phone'];
+  $_SESSION['address'] = $order_shipping_info; 
+  $_SESSION['total'] = $order_total;
+  
+	
+	
+return;		
 
   $product_base_infо = implode('<br>', $product_info);
 
@@ -606,3 +624,15 @@ add_filter('woocommerce_get_image_size_thumbnail', function ($size) {
     );
 });
 add_filter( 'wc_product_sku_enabled', '__return_false' );
+
+add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
+
+function header_add_to_cart_fragment( $fragments ) {
+    global $woocommerce;
+    ob_start();
+    ?>
+    <span class="basket-btn__counter"> <?php echo sprintf($woocommerce->cart->cart_contents_count); ?> </span>
+    <?php
+    $fragments['.basket-btn__counter'] = ob_get_clean();
+    return $fragments;
+}
