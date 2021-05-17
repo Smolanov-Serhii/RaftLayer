@@ -338,6 +338,15 @@ function raftlayer_widgets_init() {
             'after_widget'  => '</section>',
         )
     );
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Языки', 'raftlayer' ),
+            'id'            => 'language',
+            'description'   => esc_html__( 'Добавте переключатель языков', 'raftlayer' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+        )
+    );
 }
 add_action( 'widgets_init', 'raftlayer_widgets_init' );
 

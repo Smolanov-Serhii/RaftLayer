@@ -63,6 +63,17 @@ body{
 .reset_variations{
   display: none!important;
 }
+.header__undermenu{
+  #page-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #qtranslate-2-chooser{
+    margin-left: 20px;
+  }
+}
+
 .header{
   @media all and (max-width: 980px) {
     position: fixed;
@@ -3191,5 +3202,43 @@ body{
     div.swatch-image{
 
     }
+  }
+}
+
+
+.xt_woovs-tooltip {
+  pointer-events: none;
+  display: none;
+  position: absolute;
+  background-color: #161616;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 9999999;
+  left: 50%;
+  text-transform: capitalize;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  &.tooltip-image{
+    padding:0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #161616;
+  }
+
+  &:after {
+    top: calc(100% - 1px);
+    left: 50%;
+    border: 7px solid transparent;
+    border-top-color: #161616;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    margin-left: -7px;
   }
 }

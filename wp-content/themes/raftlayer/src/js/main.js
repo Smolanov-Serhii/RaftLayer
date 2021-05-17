@@ -11,6 +11,13 @@ $(document ).ready(function() {
         $('.orderby').selectric();
     }
 
+    if ($('.frescocustom').length){
+        $('.frescocustom').on('click', function(){
+            var FrescoImgUrl = $(this).data('fresco');
+            Fresco.show(FrescoImgUrl);
+        });
+    }
+
     if ($('.new-product .custom-slider-loop').length){
         var NewSlider = new Swiper('.new-product .custom-slider-loop', {
             slidesPerView: 4,
