@@ -645,3 +645,12 @@ function header_add_to_cart_fragment( $fragments ) {
     $fragments['.basket-btn__counter'] = ob_get_clean();
     return $fragments;
 }
+
+/* Изменить строку на всем сайте */
+function tb_change_text( $translated_text ) {
+    if ( $translated_text == 'Cancel Request' ) {
+        $translated_text = 'Заказ отменён';
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'tb_change_text', 20 );

@@ -43,6 +43,12 @@
 <!--<script src="--><?php //echo get_template_directory_uri() ?><!--/src/js/fresco.js" defer></script>-->
 <script src="<?php echo get_template_directory_uri() ?>/dist/js/common.js" defer></script>
 <?php wp_footer(); ?>
+<script>
+    (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+    })(window,document,'https://cdn-ru.bitrix24.ru/b17060282/crm/site_button/loader_2_ld6dnz.js');
+</script>
 
 </body>
 </html>
