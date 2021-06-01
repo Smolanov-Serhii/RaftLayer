@@ -1022,7 +1022,7 @@ body{
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
-    color: red;
+    color: #b87d3b;
     margin: 2em auto 1em!important;
   }
   @media all and (max-width: 768px) {
@@ -3254,7 +3254,7 @@ body{
   }
 }
 
-.woocommerce-account{
+.woocommerce-account, .woocommerce-order-received{
   .woocommerce-table__line-item.order_item{
     @media all and (max-width: 1024px) {
       display: flex;
